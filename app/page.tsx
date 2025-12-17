@@ -39,7 +39,7 @@ export default async function HomePage() {
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
               Your
-              <span className="text-pink-700"> Library </span>
+              <span className="text-primary/80"> Library </span>
               from ISP Community
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty">
@@ -47,7 +47,7 @@ export default async function HomePage() {
               reading to your fingertips.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" asChild>
+              <Button size="lg" asChild variant="secondary" className="text-black">
                 <Link href="/books" className="gap-2">
                   Browse Collection
                   <ArrowRight className="h-4 w-4" />

@@ -13,7 +13,7 @@ import {
 } from "ag-grid-community"
 
 import { Button } from "@/components/ui/button"
-import { BookOpen, Eye } from "lucide-react"
+import { BookOpen, Eye, Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useGetBooksQuery } from "@/lib/redux/services/baserowApi"
 import { useAppSelector } from "@/lib/redux/hooks"
@@ -145,9 +145,14 @@ export function BookAgGrid() {
 
   if (isLoading) {
     return (
-      <div>
-        <Skeleton className="h-9 px-3 rounded-md w-64" />
-        <Skeleton className="h-[60vh] w-full rounded-lg mt-8" />
+      <div className="relative flex flex-col items-center justify-center min-h-[60vh]">
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <Loader2 className="h-10 w-10 animate-spin text-primary" />
+        </div>
+        <div className="w-full space-y-4">
+          <Skeleton className="h-9 px-3 rounded-md w-64" />
+          <Skeleton className="h-[60vh] w-full rounded-lg mt-8" />
+        </div>
       </div>
     )
   }
@@ -178,7 +183,7 @@ export function BookAgGrid() {
             placeholder="Quick search all columns..."
             value={quickFilterText}
             onChange={onFilterTextChange}
-            className="h-9 px-3 rounded-md border border-input bg-background text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-64"
+            className="h-9 px-3 rounded-md border border-input bg-background text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 w-80"
           />
         </div>
         <div className="flex items-center gap-2">

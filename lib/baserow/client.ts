@@ -138,7 +138,7 @@ export async function getUserById(id: string): Promise<BaserowUser | null> {
 export async function getBorrowedBooks(userId: string): Promise<BorrowedBook[]> {
     try {
         const response = await baserowFetch<BaserowListResponse<BaserowBorrowedBook>>(
-            `${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true&filter__User__link_row_has=${userId}`
+            `${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true&filter__user_id__link_row_contains=${userId}`
         )
         return response.results.map(mapBaserowBorrowedBook)
     } catch {

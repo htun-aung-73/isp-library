@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BookOpen, Calendar, User, ArrowLeft, CheckCircle, AlertCircle, Ban } from "lucide-react"
-import { useAppSelector, useAppDispatch } from "@/lib/redux/hooks"
+import { useAppSelector } from "@/lib/redux/hooks"
 import { selectIsAuthenticated, selectUser } from "@/lib/redux/slices/authSlice"
-import { useBorrowBookMutation, useGetBooksQuery, useGetBorrowedBooksQuery } from "@/lib/redux/services/baserowApi"
+import { useBorrowBookMutation, useGetBorrowedBooksQuery } from "@/lib/redux/services/baserowApi"
 import { Book } from "@/lib/baserow/types"
 
 export function BookDetails({
@@ -22,11 +22,11 @@ export function BookDetails({
   const user = useAppSelector(selectUser)
 
   const [borrowBook, { isLoading: isBorrowing }] = useBorrowBookMutation()
-  const { data: borrowedBooks } = useGetBorrowedBooksQuery(user?.id || "", {
-    skip: !user?.id
+  const { data: borrowedBooks } = useGetBorrowedBooksQuery(user?.user_id || "", {
+    skip: !user?.user_id
   })
 
-  const hasBorrowed = borrowedBooks?.some(b => b.book_id === book?.id)
+  const hasBorrowed = borrowedBooks?.some(b => (b.book_id === book?.book_id) && (b.status === "borrowed"))
   const currentBorrows = borrowedBooks?.filter(b => b.status === "borrowed").length || 0
   const maxBorrowsPerPeriod = +process.env.MAX_BORROWS_PER_PERIOD! || 2
 
@@ -61,7 +61,7 @@ export function BookDetails({
 
     setMessage(null)
 
-    if (!book.book_id || !user?.id) {
+    if (!book.book_id || !user?.user_id) {
       setMessage({
         type: "error",
         text: `Missing info. BookID: ${book.book_id}, UserID: ${user.id}`
@@ -96,17 +96,19 @@ export function BookDetails({
 
     if (hasBorrowed) {
       return (
-        <Badge variant="outline" className="text-primary border-primary cursor-not-allowed">
-          <CheckCircle className="h-4 w-4 mr-1.5" />
-          Currently Borrowed
-        </Badge>
+        <div className="flex items-center gap-1">
+          <Badge variant="outline" className="text-primary border-primary cursor-not-allowed">
+            <CheckCircle className="h-4 w-4 mr-1.5" />
+            Currently Borrowed
+          </Badge>
+        </div>
       )
     }
 
     if (hasReachedBorrowLimit) {
       return (
         <div className="flex items-center gap-1">
-          <Badge variant="secondary" className="text-white p-2 cursor-not-allowed mr-2">
+          <Badge variant="outline" className="text-destructive p-2 cursor-not-allowed mr-2">
             <Ban className="h-4 w-4 mr-1.5" />
             Borrow Limit Reached
           </Badge>
@@ -214,13 +216,17 @@ export function BookDetails({
               <h2 className="font-semibold mb-3 text-foreground">Borrow the book</h2>
               <div className="flex items-center justify-between">
                 <div>
-                  {
-                    !hasReachedBorrowLimit ? <p className="text-sm text-muted-foreground">
-                      This book is currently available for borrowing.
-                    </p> : <p className="text-sm text-destructive">
-                      You have reached your borrowing limit. Please return a book.
-                    </p>
-                  }
+                  {hasBorrowed && <p className="text-sm text-muted-foreground">
+                    This book is currently borrowed.
+                  </p>}
+
+                  {(!hasReachedBorrowLimit && !hasBorrowed) && <p className="text-sm text-muted-foreground">
+                    This book is currently available for borrowing.
+                  </p>}
+
+                  {hasReachedBorrowLimit && <p className="text-sm text-destructive">
+                    You have reached your borrowing limit. Please return a book.
+                  </p>}
                 </div>
 
                 {renderBorrowAction()}

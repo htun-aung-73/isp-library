@@ -1,12 +1,7 @@
 {
-  "/analytics/page": "app/analytics/page.js",
-  "/api/auth/login/route": "app/api/auth/login/route.js",
-  "/api/auth/logout/route": "app/api/auth/logout/route.js",
   "/api/books/[id]/route": "app/api/books/[id]/route.js",
   "/api/books/route": "app/api/books/route.js",
-  "/api/test-env/route": "app/api/test-env/route.js",
-  "/auth/login/page": "app/auth/login/page.js",
-  "/auth/sign-up/page": "app/auth/sign-up/page.js",
+  "/api/borrow/route": "app/api/borrow/route.js",
   "/books/[id]/page": "app/books/[id]/page.js",
   "/books/page": "app/books/page.js",
   "/my-books/page": "app/my-books/page.js",

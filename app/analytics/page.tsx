@@ -48,7 +48,7 @@ export default async function AnalyticsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-pink-700 mb-2">Library Analytics</h1>
+        <h1 className="text-3xl font-bold mb-2">Library Analytics</h1>
         <p className="text-muted-foreground">Insights into our book collection and authors</p>
       </div>
 

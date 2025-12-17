@@ -16,7 +16,7 @@ export default async function MyBooksPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-pink-700 mb-2">My Books</h1>
+        <h1 className="text-3xl font-bold mb-2">My Books</h1>
         <p className="text-muted-foreground">Manage your borrowed books and view your library card</p>
       </div>
 

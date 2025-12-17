@@ -12,14 +12,7 @@ import { setCredentials, logout } from "../slices/authSlice"
 // Define a service using a base URL and expected endpoints
 export const baserowApi = createApi({
     reducerPath: "baserowApi",
-    baseQuery: fetchBaseQuery(
-        {
-            baseUrl: "/",
-            prepareHeaders: (headers) => {
-                headers.set("Authorization", `Token ${process.env.NEXT_PUBLIC_BASEROW_API_TOKEN}`)
-                return headers
-            }
-        }),
+    baseQuery: fetchBaseQuery({ baseUrl: "/" }),
     tagTypes: ["Book", "BorrowedBook", "User"],
     endpoints: (builder) => ({
         // Books

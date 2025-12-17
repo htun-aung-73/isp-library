@@ -104,7 +104,7 @@ async function getUserById(id) {
 }
 async function getBorrowedBooks(userId) {
     try {
-        const response = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true&filter__User__link_row_has=${userId}`);
+        const response = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true&filter__user_id__link_row_contains=${userId}`);
         return response.results.map(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$types$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["mapBaserowBorrowedBook"]);
     } catch  {
         return [];

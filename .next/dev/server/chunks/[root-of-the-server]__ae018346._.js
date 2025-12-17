@@ -142,9 +142,9 @@ const TABLE_USERS = ("TURBOPACK compile-time value", "772601") || "";
 const TABLE_BORROW_BOOKS = ("TURBOPACK compile-time value", "772607") || "";
 /**
  * Base fetch function for Baserow API
- */ async function baserowFetch(endpoint, options = {}) {
-    const url = `${BASEROW_API_URL}${endpoint}`;
-    const response = await fetch(url, {
+ */ async function baserowFetch(url, options = {}) {
+    const httpsUrl = url.replace("http://", "https://");
+    const response = await fetch(httpsUrl, {
         ...options,
         headers: {
             "Authorization": `Token ${BASEROW_API_TOKEN}`,
@@ -158,25 +158,44 @@ const TABLE_BORROW_BOOKS = ("TURBOPACK compile-time value", "772607") || "";
     }
     return response.json();
 }
+/**
+ * Fetch all pages from a Baserow list endpoint
+ */ async function baserowFetchAll(initialEndpoint) {
+    let allResults = [];
+    let nextUrl = initialEndpoint;
+    // Improve performance by requesting max page size (200) if not specified
+    if (!nextUrl.includes("size=")) {
+        nextUrl += nextUrl.includes("?") ? "&size=200" : "?size=200";
+    }
+    while(nextUrl){
+        const response = await baserowFetch(nextUrl);
+        allResults = [
+            ...allResults,
+            ...response.results
+        ];
+        nextUrl = response.next;
+    }
+    return allResults;
+}
 async function getBooks() {
-    const response = await baserowFetch(`/api/database/rows/table/${TABLE_BOOKS}/?user_field_names=true&size=200`);
-    return response.results.map(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$types$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["mapBaserowBookToBook"]);
+    const results = await baserowFetchAll(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_BOOKS}/?user_field_names=true`);
+    return results.map(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$types$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["mapBaserowBookToBook"]);
 }
 async function getBook(id) {
     try {
-        const { results } = await baserowFetch(`/api/database/rows/table/${TABLE_BOOKS}/?user_field_names=true&filter__book_id__equal=${id}`);
+        const { results } = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_BOOKS}/?user_field_names=true&filter__book_id__equal=${id}`);
         return (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$types$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["mapBaserowBookToBook"])(results[0]);
     } catch  {
         return null;
     }
 }
 async function getAuthors() {
-    const response = await baserowFetch(`/api/database/rows/table/${TABLE_AUTHORS}/?user_field_names=true`);
-    return response.results;
+    const results = await baserowFetchAll(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_AUTHORS}/?user_field_names=true`);
+    return results;
 }
 async function getUserByEmail(email) {
     try {
-        const response = await baserowFetch(`/api/database/rows/table/${TABLE_USERS}/?user_field_names=true&filter__email__equal=${encodeURIComponent(email)}`);
+        const response = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_USERS}/?user_field_names=true&filter__email__equal=${encodeURIComponent(email)}`);
         return response.results[0] || null;
     } catch  {
         return null;
@@ -184,7 +203,7 @@ async function getUserByEmail(email) {
 }
 async function getUserById(id) {
     try {
-        const user = await baserowFetch(`/api/database/rows/table/${TABLE_USERS}/${id}/?user_field_names=true`);
+        const user = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_USERS}/${id}/?user_field_names=true`);
         return user;
     } catch  {
         return null;
@@ -192,7 +211,7 @@ async function getUserById(id) {
 }
 async function getBorrowedBooks(userId) {
     try {
-        const response = await baserowFetch(`/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true&filter__User__link_row_has=${userId}`);
+        const response = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true&filter__user_id__link_row_contains=${userId}`);
         return response.results.map(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$types$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["mapBaserowBorrowedBook"]);
     } catch  {
         return [];
@@ -200,7 +219,7 @@ async function getBorrowedBooks(userId) {
 }
 async function createBorrowRecord(data) {
     try {
-        const response = await baserowFetch(`/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true`, {
+        const response = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true`, {
             method: "POST",
             body: JSON.stringify({
                 book_id: data.bookId,
@@ -217,7 +236,7 @@ async function createBorrowRecord(data) {
 }
 async function updateBorrowRecord(id, data) {
     try {
-        const response = await baserowFetch(`/api/database/rows/table/${TABLE_BORROW_BOOKS}/${id}/?user_field_names=true`, {
+        const response = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/${id}/?user_field_names=true`, {
             method: "PATCH",
             body: JSON.stringify(data)
         });
@@ -228,7 +247,7 @@ async function updateBorrowRecord(id, data) {
 }
 async function createUser(data) {
     try {
-        const response = await baserowFetch(`/api/database/rows/table/${TABLE_USERS}/?user_field_names=true`, {
+        const response = await baserowFetch(`${BASEROW_API_URL}/api/database/rows/table/${TABLE_USERS}/?user_field_names=true`, {
             method: "POST",
             body: JSON.stringify({
                 email: data.email,
