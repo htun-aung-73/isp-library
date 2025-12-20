@@ -1,19 +1,11 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/admin/page": "app/admin/page.js",
-  "/api/auth/login/route": "app/api/auth/login/route.js",
-  "/api/auth/logout/route": "app/api/auth/logout/route.js",
   "/api/authors/[id]/books/route": "app/api/authors/[id]/books/route.js",
   "/api/authors/[id]/route": "app/api/authors/[id]/route.js",
+  "/api/authors/route": "app/api/authors/route.js",
   "/api/books/[id]/route": "app/api/books/[id]/route.js",
-  "/api/books/route": "app/api/books/route.js",
-  "/api/borrow/route": "app/api/borrow/route.js",
-  "/api/return/route": "app/api/return/route.js",
-  "/auth/login/page": "app/auth/login/page.js",
-  "/auth/sign-up/page": "app/auth/sign-up/page.js",
   "/authors/[id]/page": "app/authors/[id]/page.js",
+  "/authors/page": "app/authors/page.js",
   "/books/[id]/page": "app/books/[id]/page.js",
-  "/books/page": "app/books/page.js",
   "/my-books/page": "app/my-books/page.js",
   "/page": "app/page.js"
 }

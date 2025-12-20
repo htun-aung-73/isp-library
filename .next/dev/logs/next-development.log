@@ -1,804 +1,5 @@
-[00:00:01.841] Server  LOG      ✓ Ready in 1550ms
-[00:00:08.134] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:08.134] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:08.134] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766221483819}
-[00:00:11.036] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766221486719}
-[00:00:18.490] Browser WARN    AG Grid: As of version 32.2.1, using `rowSelection` with the values "single" or "multiple" has been deprecated. Use the object value instead.
-[00:00:20.991] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0001 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0001","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766221496677}
-[00:00:24.584] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:24.585] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0001","route":"/authors/A0001"}
-[00:00:24.585] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0001 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/A0001","o":"http://localhost:3000/authors/A0001","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766221500270}
-[00:00:51.498] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0001 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0001","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766221527179}
-[00:02:59.510] Server  LOG      ✓ Compiled in 252ms
-[00:04:14.957] Server  LOG      ✓ Compiled in 194ms
-[00:04:49.480] Server  LOG      ✓ Compiled in 153ms
-[00:07:49.841] Server  LOG      ✓ Compiled in 753ms
-[00:07:49.960] Browser ERROR   ./components/author-books.tsx:129:3
-Parsing ecmascript source code failed
-  127 |     )
-  128 | }
-> 129 | ```
-      |   ^
-> 130 | 
-      | ^
-
-Unterminated template
-
-Import trace:
-  Server Component:
-    ./components/author-books.tsx
-    ./app/authors/[id]/page.tsx
-[00:07:59.962] Server  LOG      ✓ Compiled in 275ms
-[00:09:13.878] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0001 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0001","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222029437}
-[00:09:18.180] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222033849}
-[00:09:23.929] Browser WARN    AG Grid: As of version 32.2.1, using `rowSelection` with the values "single" or "multiple" has been deprecated. Use the object value instead.
-[00:09:27.321] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0005 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222042989}
-[00:09:29.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222045559}
-[00:10:10.306] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:10:10.306] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:10:10.306] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:10:10.306] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222085974}
-[00:10:16.551] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:10:16.551] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:10:16.551] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222092218}
-[00:12:06.349] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:12:06.349] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:12:06.349] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:12:06.349] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222201979}
-[00:17:53.853] Server  LOG      ✓ Compiled in 279ms
-[00:17:57.059] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:17:57.059] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:17:57.059] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766222552727}
-[00:19:48.845] Server  LOG      ✓ Compiled in 117ms
-[00:23:36.426] Server  LOG      ✓ Compiled in 151ms
-[00:25:34.109] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:25:34.109] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:25:34.109] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:25:34.109] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223009763}
-[00:26:44.588] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:26:44.588] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:26:44.588] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:26:44.588] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223080214}
-[00:26:45.778] Server  LOG     Author:  {}
-[00:27:40.072] Server  LOG      ✓ Compiled in 116ms
-[00:28:03.706] Server  LOG      ✓ Compiled in 88ms
-[00:28:34.441] Server  LOG      ✓ Compiled in 77ms
-[00:28:41.033] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:28:41.033] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:28:41.033] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223196611}
-[00:28:42.085] Server  LOG     Author:  {}
-[00:32:50.652] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:32:50.782] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:32:50.782] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:32:50.783] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223446406}
-[00:32:51.946] Server  LOG     Author:  {}
-[00:34:25.766] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:34:25.766] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:34:25.766] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:34:25.766] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223541409}
-[00:34:38.244] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:34:38.244] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:34:38.244] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223553888}
-[00:34:49.113] Server  LOG      ✓ Compiled in 207ms
-[00:34:52.161] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:34:52.161] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:34:52.161] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223567652}
-[00:35:35.907] Server  LOG      ✓ Compiled in 341ms
-[00:35:40.088] Server  LOG      ✓ Compiled in 156ms
-[00:35:49.285] Server  LOG      ✓ Compiled in 243ms
-[00:35:53.593] Server  LOG      ✓ Compiled in 250ms
-[00:35:59.911] Server  LOG      ✓ Compiled in 213ms
-[00:36:07.100] Server  LOG      ✓ Compiled in 85ms
-[00:37:01.708] Server  LOG      ✓ Compiled in 307ms
-[00:37:18.129] Server  LOG      ✓ Compiled in 173ms
-[00:37:36.443] Server  LOG      ✓ Compiled in 147ms
-[00:38:04.811] Server  LOG      ✓ Compiled in 90ms
-[00:38:41.127] Server  LOG      ✓ Compiled in 81ms
-[00:38:57.219] Server  LOG      ✓ Compiled in 268ms
-[00:39:07.600] Server  LOG      ✓ Compiled in 74ms
-[00:39:12.725] Server  LOG      ✓ Compiled in 67ms
-[00:39:22.885] Server  LOG      ✓ Compiled in 95ms
-[00:39:26.669] Server  LOG      ✓ Compiled in 65ms
-[00:40:32.060] Server  LOG      ✓ Compiled in 146ms
-[00:40:32.332] Browser ERROR   uncaughtError: ReferenceError: Book is not defined
-[00:40:40.189] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:40:40.199] Server  LOG      ✓ Compiled in 318ms
-[00:40:40.479] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223916022}
-[00:40:42.641] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:40:42.641] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:40:42.641] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766223918274}
-[00:40:55.619] Server  LOG      ✓ Compiled in 110ms
-[00:41:35.017] Server  LOG      ✓ Compiled in 76ms
-[00:41:35.247] Browser ERROR   uncaughtError: TypeError: Constructor Map requires 'new'
-[00:43:34.997] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:43:35.006] Server  LOG      ✓ Compiled in 237ms
-[00:43:35.976] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224090836}
-[00:43:37.659] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:43:37.747] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:43:37.747] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0005","route":"/authors/[id]"}
-[00:43:37.747] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224093374}
-[00:43:52.815] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0015 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0015","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224108438}
-[00:43:57.783] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224113409}
-[00:44:03.582] Browser WARN    AG Grid: As of version 32.2.1, using `rowSelection` with the values "single" or "multiple" has been deprecated. Use the object value instead.
-[00:44:08.591] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0015 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0015","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224124214}
-[00:45:07.771] Server  LOG      ✓ Compiled in 331ms
-[00:45:07.918] Browser ERROR   ./components/book-details.tsx:13:1
-Export Book doesn't exist in target module
-  11 | import { selectIsAuthenticated } from "@/lib/redux/slices/authSlice"
-  12 | import { useBorrowBookMutation } from "@/lib/redux/services/baserowApi"
-> 13 | import { Book, BorrowedBook, SessionUser } from "@/lib/baserow/types"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  14 | import { toast } from "sonner"
-  15 |
-  16 | export function BookDetails({
-
-The export Book was not found in module [project]/lib/baserow/types.ts [app-client] (ecmascript).
-Did you mean to import mapBaserowBookToBook?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./components/book-details.tsx [Client Component Browser]
-    ./app/books/[id]/page.tsx [Client Component Browser]
-    ./app/books/[id]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./components/book-details.tsx [Client Component SSR]
-    ./app/books/[id]/page.tsx [Client Component SSR]
-    ./app/books/[id]/page.tsx [Server Component]
-[00:45:07.918] Browser ERROR   ./components/book-details.tsx:13:1
-Export Book doesn't exist in target module
-  11 | import { selectIsAuthenticated } from "@/lib/redux/slices/authSlice"
-  12 | import { useBorrowBookMutation } from "@/lib/redux/services/baserowApi"
-> 13 | import { Book, BorrowedBook, SessionUser } from "@/lib/baserow/types"
-     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  14 | import { toast } from "sonner"
-  15 |
-  16 | export function BookDetails({
-
-The export Book was not found in module [project]/lib/baserow/types.ts [app-ssr] (ecmascript).
-Did you mean to import mapBaserowBookToBook?
-All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
-
-Import traces:
-  Client Component Browser:
-    ./components/book-details.tsx [Client Component Browser]
-    ./app/books/[id]/page.tsx [Client Component Browser]
-    ./app/books/[id]/page.tsx [Server Component]
-
-  Client Component SSR:
-    ./components/book-details.tsx [Client Component SSR]
-    ./app/books/[id]/page.tsx [Client Component SSR]
-    ./app/books/[id]/page.tsx [Server Component]
-[00:45:34.190] Server  LOG      ✓ Compiled in 110ms
-[00:46:01.875] Server  LOG      ✓ Compiled in 105ms
-[00:46:27.094] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224262712}
-[00:46:33.178] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/my-books color: rgb(120, 120, 120) color: inherit {"dp":"/my-books","o":"http://localhost:3000/my-books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224268785}
-[00:46:38.282] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0155 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0155","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224273904}
-[00:46:41.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0110 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0110","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224276899}
-[00:51:07.035] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:51:07.037] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:51:07.037] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0110","route":"/authors/[id]"}
-[00:51:07.037] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0110 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0110","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224542663}
-[00:51:11.116] Server  LOG     Authors [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
-[00:53:51.699] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:53:51.699] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:53:51.699] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0110","route":"/authors/[id]"}
-[00:53:51.699] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0110 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0110","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224707322}
-[00:57:05.950] Server  LOG      ✓ Compiled in 210ms
-[00:57:06.213] Browser LOG     Author {"data":{"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"},"success":true}
-[00:57:06.213] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"data":{"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"},"success":true}
-[00:57:15.111] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:57:15.111] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:57:15.111] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0110","route":"/authors/[id]"}
-[00:57:15.111] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0110 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0110","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766224910725}
-[00:57:16.455] Browser LOG     Author {"data":{"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"},"success":true}
-[00:57:16.457] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"data":{"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"},"success":true}
-[00:59:46.674] Server  LOG      ✓ Compiled in 451ms
-[00:59:46.831] Browser LOG     Author {"data":{"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"},"success":true}
-[00:59:46.831] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"data":{"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"},"success":true}
-[00:59:59.467] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:59:59.467] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:59:59.467] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0110","route":"/authors/[id]"}
-[00:59:59.467] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0110 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0110","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225075082}
-[01:00:00.607] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:00:00.607] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:00:53.878] Server  LOG      ✓ Compiled in 205ms
-[01:00:53.981] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:00:53.981] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:04.405] Server  LOG      ✓ Compiled in 78ms
-[01:01:04.505] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:04.505] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:10.440] Server  LOG      ✓ Compiled in 97ms
-[01:01:10.532] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:10.532] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:28.810] Server  LOG      ✓ Compiled in 74ms
-[01:01:28.895] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:28.895] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:33.758] Server  LOG      ✓ Compiled in 75ms
-[01:01:33.860] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:01:33.860] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:03:02.990] Server  LOG      ✓ Compiled in 417ms
-[01:03:03.091] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:03:03.091] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:03:07.006] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors/A..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[01:03:07.006] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:03:07.006] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors/A0110","route":"/authors/[id]"}
-[01:03:07.006] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0110 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0110","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225262617}
-[01:03:08.242] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:03:08.242] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:03:27.957] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0148 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0148","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225283565}
-[01:03:47.659] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/my-books color: rgb(120, 120, 120) color: inherit {"dp":"/my-books","o":"http://localhost:3000/my-books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225303265}
-[01:03:57.641] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0148 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0148","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225313249}
-[01:03:59.526] Browser LOG     Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:03:59.526] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0110","id":110,"name":"ရွှေဥဒေါင်း"}
-[01:03:59.526] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0110 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0110","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225315133}
-[01:04:01.507] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225317115}
-[01:04:13.326] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225328935}
-[01:04:19.931] Browser WARN    AG Grid: As of version 32.2.1, using `rowSelection` with the values "single" or "multiple" has been deprecated. Use the object value instead.
-[01:05:01.001] Server  LOG      ✓ Compiled in 149ms
-[01:05:02.587] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0001 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0001","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225378193}
-[01:05:05.671] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0001 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0001","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225381276}
-[01:05:06.461] Browser LOG     Author {"author_id":"A0001","id":1,"name":"ကျော်ဝင်း၊ ဒေါက်တာ၊ သမိုင်းပါမောက္ခ(ငြိမ်း)"}
-[01:05:06.461] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0001","id":1,"name":"ကျော်ဝင်း၊ ဒေါက်တာ၊ သမိုင်းပါမောက္ခ(ငြိမ်း)"}
-[01:05:17.268] Server  LOG      ✓ Compiled in 127ms
-[01:05:17.354] Browser LOG     Author {"author_id":"A0001","id":1,"name":"ကျော်ဝင်း၊ ဒေါက်တာ၊ သမိုင်းပါမောက္ခ(ငြိမ်း)"}
-[01:05:17.354] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0001","id":1,"name":"ကျော်ဝင်း၊ ဒေါက်တာ၊ သမိုင်းပါမောက္ခ(ငြိမ်း)"}
-[01:05:46.576] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[01:05:46.576] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:05:46.576] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
-[01:05:46.576] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225422183}
-[01:08:24.015] Server  LOG      ✓ Compiled in 132ms
-[01:08:31.213] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[01:08:31.213] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:08:31.213] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
-[01:08:31.213] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225586815}
-[01:08:59.998] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:08:59.998] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
-[01:08:59.998] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225615599}
-[01:09:17.542] Server  LOG      ✓ Compiled in 120ms
-[01:09:21.805] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:09:21.805] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:09:21.805] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225637406}
-[01:11:05.922] Server  LOG      ✓ Compiled in 110ms
-[01:11:24.325] Server  LOG      ✓ Compiled in 108ms
-[01:11:48.918] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:11:48.918] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:11:48.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225784514}
-[01:12:31.545] Server  LOG      ✓ Compiled in 212ms
-[01:12:35.815] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:01.437] Server  LOG      ✓ Ready in 1172ms
+[00:00:20.582] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -837,14 +38,15 @@ It can also happen if the client has a browser extension installed which messes 
                           >
                   ...
 
-[01:12:35.815] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:12:35.815] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:12:35.815] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225831411}
-[01:12:39.476] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/login color: rgb(120, 120, 120) color: inherit {"dp":"/auth/login","o":"http://localhost:3000/auth/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225835067}
-[01:13:02.666] Server  LOG      ✓ Compiled in 150ms
-[01:13:07.649] Server  LOG      ✓ Compiled in 91ms
-[01:13:20.332] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225875923}
-[01:13:24.134] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:20.582] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:20.582] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:20.582] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226481063}
+[00:00:25.276] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:25.276] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:00:25.276] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226485755}
+[00:01:33.330] Server  LOG      ✓ Compiled in 153ms
+[00:01:35.785] Server  LOG      ✓ Compiled in 179ms
+[00:01:37.320] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -862,7 +64,7 @@ It can also happen if the client has a browser extension installed which messes 
         <ReplaySsrOnlyErrors>
         <DevRootHTTPAccessFallbackBoundary>
           <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
               <RedirectBoundary>
                 <RedirectErrorBoundary router={{...}}>
                   <Head>
@@ -883,16 +85,12 @@ It can also happen if the client has a browser extension installed which messes 
                           >
                   ...
 
-[01:13:24.134] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:13:24.134] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:13:24.134] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225879728}
-[01:13:29.689] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:13:29.689] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authos","route":"/authos"}
-[01:13:29.689] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authos color: rgb(120, 120, 120) color: inherit {"dp":"/authos","o":"http://localhost:3000/authos","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225885283}
-[01:13:35.060] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/login color: rgb(120, 120, 120) color: inherit {"dp":"/auth/login","o":"http://localhost:3000/auth/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225890651}
-[01:13:56.553] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225912145}
-[01:14:30.464] Server  LOG      ✓ Compiled in 158ms
-[01:14:37.693] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:01:37.320] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:37.320] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:01:37.320] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226557799}
+[00:02:07.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/my-books color: rgb(120, 120, 120) color: inherit {"dp":"/my-books","o":"http://localhost:3000/my-books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226587756}
+[00:02:10.513] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226590975}
+[00:03:00.891] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -910,7 +108,7 @@ It can also happen if the client has a browser extension installed which messes 
         <ReplaySsrOnlyErrors>
         <DevRootHTTPAccessFallbackBoundary>
           <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
               <RedirectBoundary>
                 <RedirectErrorBoundary router={{...}}>
                   <Head>
@@ -931,12 +129,278 @@ It can also happen if the client has a browser extension installed which messes 
                           >
                   ...
 
-[01:14:37.693] Browser WARN    AG Grid: As of version 32.2.1, using `rowSelection` with the values "single" or "multiple" has been deprecated. Use the object value instead.
-[01:14:37.836] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:14:37.836] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin","route":"/admin"}
-[01:14:37.836] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225953429}
-[01:14:41.063] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/login color: rgb(120, 120, 120) color: inherit {"dp":"/auth/login","o":"http://localhost:3000/auth/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225956651}
-[01:14:45.134] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/sign-up color: rgb(120, 120, 120) color: inherit {"dp":"/auth/sign-up","o":"http://localhost:3000/auth/sign-up","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225960722}
-[01:14:47.816] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/login color: rgb(120, 120, 120) color: inherit {"dp":"/auth/login","o":"http://localhost:3000/auth/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225963402}
-[01:14:57.204] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225972795}
-[01:14:59.687] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766225975278}
+[00:03:00.891] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:00.891] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:03:00.891] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226641367}
+[00:03:05.050] Server  LOG     Authors in author route [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:03:50.871] Server  LOG      ✓ Compiled in 333ms
+[00:03:53.235] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <head>
+                          <body
+                            className="font-manrope antialiased bg-background text-foreground"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:03:53.235] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:53.235] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:03:53.235] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226693710}
+[00:03:56.516] Server  LOG     Authors in author route [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:03:56.622] Browser ERROR   An unhandled error occurred processing a request for the endpoint "getAuthors".
+In the case of an unhandled error, no tags will be "provided" or "invalidated". {}
+[00:04:31.592] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <head>
+                          <body
+                            className="font-manrope antialiased bg-background text-foreground"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:04:31.592] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:31.592] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:04:31.592] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226732065}
+[00:04:34.810] Server  LOG     Authors in author route [{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...},{...}]
+[00:04:34.921] Browser ERROR   An unhandled error occurred processing a request for the endpoint "getAuthors".
+In the case of an unhandled error, no tags will be "provided" or "invalidated". {}
+[00:06:09.905] Server  LOG      ✓ Compiled in 106ms
+[00:06:12.342] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <head>
+                          <body
+                            className="font-manrope antialiased bg-background text-foreground"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:06:12.342] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:06:12.342] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:06:12.342] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226832809}
+[00:06:26.254] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0005 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0005","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226846721}
+[00:06:27.998] Browser LOG     Author {"author_id":"A0005","books":[{"id":5,"order":"5.00000000000000000000","value":"B0005"},{"id":15,"order":"15.00000000000000000000","value":"B0015"},{"id":16,"order":"16.00000000000000000000","value":"B0016"},{"id":34,"order":"34.00000000000000000000","value":"B0034"},{"id":44,"order":"44.00000000000000000000","value":"B0044"},{"id":59,"order":"59.00000000000000000000","value":"B0059"},{"id":94,"order":"94.00000000000000000000","value":"B0094"},{"id":123,"order":"123.00000000000000000000","value":"B0123"},{"id":135,"order":"135.00000000000000000000","value":"B0135"},{"id":179,"order":"179.00000000000000000000","value":"B0179"},{"id":372,"order":"372.00000000000000000000","value":"B0372"},{"id":429,"order":"429.00000000000000000000","value":"B0429"},{"id":448,"order":"448.00000000000000000000","value":"B0448"},{"id":467,"order":"467.00000000000000000000","value":"B0467"},{"id":511,"order":"511.00000000000000000000","value":"B0511"},{"id":512,"order":"512.00000000000000000000","value":"B0512"},{"id":514,"order":"514.00000000000000000000","value":"B0514"},{"id":577,"order":"577.00000000000000000000","value":"B0577"},{"id":641,"order":"641.00000000000000000000","value":"B0641"},{"id":680,"order":"680.00000000000000000000","value":"B0680"},{"id":788,"order":"788.00000000000000000000","value":"B0788"},{"id":812,"order":"812.00000000000000000000","value":"B0812"},{"id":845,"order":"845.00000000000000000000","value":"B0845"},{"id":846,"order":"846.00000000000000000000","value":"B0846"},{"id":859,"order":"859.00000000000000000000","value":"B0859"},{"id":1103,"order":"1103.00000000000000000000","value":"B1103"},{"id":1107,"order":"1107.00000000000000000000","value":"B1107"},{"id":1189,"order":"1189.00000000000000000000","value":"B1189"},{"id":1193,"order":"1193.00000000000000000000","value":"B1193"},{"id":1201,"order":"1201.00000000000000000000","value":"B1201"},{"id":1204,"order":"1204.00000000000000000000","value":"B1204"},{"id":1205,"order":"1205.00000000000000000000","value":"B1205"},{"id":1225,"order":"1225.00000000000000000000","value":"B1225"},{"id":1272,"order":"1272.00000000000000000000","value":"B1272"},{"id":1278,"order":"1278.00000000000000000000","value":"B1278"},{"id":1361,"order":"1361.00000000000000000000","value":"B1361"},{"id":1368,"order":"1368.00000000000000000000","value":"B1368"},{"id":1437,"order":"1437.00000000000000000000","value":"B1437"}],"borrow_books":[{"id":269,"order":"14.00000000000000000000","value":"BR0269"},{"id":277,"order":"22.00000000000000000000","value":"BR0277"}],"id":5,"name":"ကလောင်စုံ"}
+[00:06:27.998] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0005","books":[{"id":5,"order":"5.00000000000000000000","value":"B0005"},{"id":15,"order":"15.00000000000000000000","value":"B0015"},{"id":16,"order":"16.00000000000000000000","value":"B0016"},{"id":34,"order":"34.00000000000000000000","value":"B0034"},{"id":44,"order":"44.00000000000000000000","value":"B0044"},{"id":59,"order":"59.00000000000000000000","value":"B0059"},{"id":94,"order":"94.00000000000000000000","value":"B0094"},{"id":123,"order":"123.00000000000000000000","value":"B0123"},{"id":135,"order":"135.00000000000000000000","value":"B0135"},{"id":179,"order":"179.00000000000000000000","value":"B0179"},{"id":372,"order":"372.00000000000000000000","value":"B0372"},{"id":429,"order":"429.00000000000000000000","value":"B0429"},{"id":448,"order":"448.00000000000000000000","value":"B0448"},{"id":467,"order":"467.00000000000000000000","value":"B0467"},{"id":511,"order":"511.00000000000000000000","value":"B0511"},{"id":512,"order":"512.00000000000000000000","value":"B0512"},{"id":514,"order":"514.00000000000000000000","value":"B0514"},{"id":577,"order":"577.00000000000000000000","value":"B0577"},{"id":641,"order":"641.00000000000000000000","value":"B0641"},{"id":680,"order":"680.00000000000000000000","value":"B0680"},{"id":788,"order":"788.00000000000000000000","value":"B0788"},{"id":812,"order":"812.00000000000000000000","value":"B0812"},{"id":845,"order":"845.00000000000000000000","value":"B0845"},{"id":846,"order":"846.00000000000000000000","value":"B0846"},{"id":859,"order":"859.00000000000000000000","value":"B0859"},{"id":1103,"order":"1103.00000000000000000000","value":"B1103"},{"id":1107,"order":"1107.00000000000000000000","value":"B1107"},{"id":1189,"order":"1189.00000000000000000000","value":"B1189"},{"id":1193,"order":"1193.00000000000000000000","value":"B1193"},{"id":1201,"order":"1201.00000000000000000000","value":"B1201"},{"id":1204,"order":"1204.00000000000000000000","value":"B1204"},{"id":1205,"order":"1205.00000000000000000000","value":"B1205"},{"id":1225,"order":"1225.00000000000000000000","value":"B1225"},{"id":1272,"order":"1272.00000000000000000000","value":"B1272"},{"id":1278,"order":"1278.00000000000000000000","value":"B1278"},{"id":1361,"order":"1361.00000000000000000000","value":"B1361"},{"id":1368,"order":"1368.00000000000000000000","value":"B1368"},{"id":1437,"order":"1437.00000000000000000000","value":"B1437"}],"borrow_books":[{"id":269,"order":"14.00000000000000000000","value":"BR0269"},{"id":277,"order":"22.00000000000000000000","value":"BR0277"}],"id":5,"name":"ကလောင်စုံ"}
+[00:06:31.904] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766226852360}
+[00:06:55.181] Server  LOG      ✓ Compiled in 83ms
+[00:07:35.245] Server  LOG      ✓ Compiled in 119ms
+[00:10:43.516] Server  LOG      ✓ Compiled in 202ms
+[00:10:43.742] Browser LOG     Authors in useMemo
+[00:10:43.742] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:10:55.905] Server  LOG     Authors in useMemo
+[00:10:56.864] Browser LOG     Authors in useMemo
+[00:10:56.864] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:10:56.864] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/authors" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <head>
+                          <body
+                            className="font-manrope antialiased bg-background text-foreground"
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+
+[00:10:56.864] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:56.864] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:10:56.864] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227117260}
+[00:11:01.035] Browser LOG     Authors in useMemo
+[00:11:01.035] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:07.132] Server  LOG      ✓ Compiled in 134ms
+[00:12:07.253] Browser LOG     Authors in useMemo
+[00:12:07.253] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:07.253] Browser LOG     Authors in useMemo
+[00:12:07.253] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:07.253] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'map')
+[00:12:15.451] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:12:15.472] Server  LOG      ✓ Compiled in 76ms
+[00:12:15.626] Browser LOG     Authors in useMemo
+[00:12:15.626] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:15.626] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227196040}
+[00:12:15.894] Server  LOG     Authors in useMemo
+[00:12:16.555] Browser LOG     Authors in useMemo
+[00:12:16.558] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:16.662] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:12:16.662] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/authors","route":"/authors"}
+[00:12:16.662] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227197123}
+[00:12:18.987] Browser LOG     Authors in useMemo
+[00:12:18.987] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:20.610] Browser LOG     Authors in useMemo
+[00:12:20.610] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:21.723] Browser LOG     Authors in useMemo
+[00:12:21.723] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:28.583] Server  LOG      ✓ Compiled in 78ms
+[00:12:28.940] Browser LOG     Authors in useMemo
+[00:12:28.941] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:54.251] Browser LOG     Authors in useMemo
+[00:12:54.251] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:12:58.416] Browser LOG     Authors in useMemo
+[00:12:58.416] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:13:00.172] Browser LOG     Authors in useMemo
+[00:13:00.173] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:13:01.806] Browser LOG     Authors in useMemo
+[00:13:01.806] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:13:03.805] Browser LOG     Authors in useMemo
+[00:13:03.805] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:13:05.491] Browser LOG     Authors in useMemo
+[00:13:05.491] Browser LOG     [2;38;2;124;124;124m%s[0m Authors in useMemo
+[00:13:23.400] Server  LOG      ✓ Compiled in 70ms
+[00:13:45.517] Server  LOG      ✓ Compiled in 83ms
+[00:13:58.169] Server  LOG      ✓ Compiled in 200ms
+[00:14:08.573] Server  LOG      ✓ Compiled in 114ms
+[00:14:31.197] Server  LOG      ✓ Compiled in 142ms
+[00:14:56.440] Server  LOG      ✓ Compiled in 107ms
+[00:15:07.971] Server  LOG      ✓ Compiled in 204ms
+[00:15:23.154] Server  LOG      ✓ Compiled in 91ms
+[00:15:39.903] Server  LOG      ✓ Compiled in 127ms
+[00:15:46.201] Server  LOG      ✓ Compiled in 110ms
+[00:16:11.396] Server  LOG      ✓ Compiled in 71ms
+[00:16:37.056] Server  LOG      ✓ Compiled in 96ms
+[00:16:49.232] Server  LOG      ✓ Compiled in 84ms
+[00:17:27.061] Server  LOG      ✓ Compiled in 119ms
+[00:17:41.039] Server  LOG      ✓ Compiled in 81ms
+[00:17:49.253] Server  LOG      ✓ Compiled in 209ms
+[00:17:58.636] Server  LOG      ✓ Compiled in 134ms
+[00:18:08.829] Server  LOG      ✓ Compiled in 90ms
+[00:18:18.177] Server  LOG      ✓ Compiled in 76ms
+[00:18:52.494] Server  LOG      ✓ Compiled in 93ms
+[00:19:00.530] Server  LOG      ✓ Compiled in 96ms
+[00:19:36.534] Server  LOG      ✓ Compiled in 81ms
+[00:19:50.295] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0001 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0001","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227650742}
+[00:19:51.315] Browser LOG     Author {"author_id":"A0001","books":[{"id":1,"order":"1.00000000000000000000","value":"B0001"},{"id":58,"order":"58.00000000000000000000","value":"B0058"},{"id":95,"order":"95.00000000000000000000","value":"B0095"}],"borrow_books":[{"id":1,"order":"1.00000000000000000000","value":"BR0001"},{"id":101,"order":"4.00000000000000000000","value":"BR0101"},{"id":134,"order":"6.00000000000000000000","value":"BR0134"},{"id":266,"order":"11.00000000000000000000","value":"BR0266"}],"id":1,"name":"ကျော်ဝင်း၊ ဒေါက်တာ၊ သမိုင်းပါမောက္ခ(ငြိမ်း)"}
+[00:19:51.316] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0001","books":[{"id":1,"order":"1.00000000000000000000","value":"B0001"},{"id":58,"order":"58.00000000000000000000","value":"B0058"},{"id":95,"order":"95.00000000000000000000","value":"B0095"}],"borrow_books":[{"id":1,"order":"1.00000000000000000000","value":"BR0001"},{"id":101,"order":"4.00000000000000000000","value":"BR0101"},{"id":134,"order":"6.00000000000000000000","value":"BR0134"},{"id":266,"order":"11.00000000000000000000","value":"BR0266"}],"id":1,"name":"ကျော်ဝင်း၊ ဒေါက်တာ၊ သမိုင်းပါမောက္ခ(ငြိမ်း)"}
+[00:19:54.859] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227655293}
+[00:19:56.703] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0008 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0008","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227657152}
+[00:19:57.434] Browser LOG     Author {"author_id":"A0008","books":[{"id":8,"order":"8.00000000000000000000","value":"B0008"}],"borrow_books":[{"id":284,"order":"29.00000000000000000000","value":"BR0284"}],"id":8,"name":"ထွန်းဝေမြင့်"}
+[00:19:57.435] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0008","books":[{"id":8,"order":"8.00000000000000000000","value":"B0008"}],"borrow_books":[{"id":284,"order":"29.00000000000000000000","value":"BR0284"}],"id":8,"name":"ထွန်းဝေမြင့်"}
+[00:20:01.219] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227661654}
+[00:20:05.777] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0039 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0039","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227666226}
+[00:20:06.505] Browser LOG     Author {"author_id":"A0039","books":[{"id":50,"order":"50.00000000000000000000","value":"B0050"}],"borrow_books":[],"id":39,"name":"တူဂျ၊ ဒေါက်တာ"}
+[00:20:06.505] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0039","books":[{"id":50,"order":"50.00000000000000000000","value":"B0050"}],"borrow_books":[],"id":39,"name":"တူဂျ၊ ဒေါက်တာ"}
+[00:20:08.650] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227669088}
+[00:20:21.778] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0122 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0122","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227682227}
+[00:20:22.736] Browser LOG     Author {"author_id":"A0122","books":[{"id":194,"order":"194.00000000000000000000","value":"B0194"},{"id":210,"order":"210.00000000000000000000","value":"B0210"},{"id":214,"order":"214.00000000000000000000","value":"B0214"},{"id":215,"order":"215.00000000000000000000","value":"B0215"},{"id":247,"order":"247.00000000000000000000","value":"B0247"},{"id":248,"order":"248.00000000000000000000","value":"B0248"},{"id":249,"order":"249.00000000000000000000","value":"B0249"},{"id":250,"order":"250.00000000000000000000","value":"B0250"},{"id":255,"order":"255.00000000000000000000","value":"B0255"},{"id":256,"order":"256.00000000000000000000","value":"B0256"},{"id":257,"order":"257.00000000000000000000","value":"B0257"},{"id":261,"order":"261.00000000000000000000","value":"B0261"},{"id":262,"order":"262.00000000000000000000","value":"B0262"},{"id":263,"order":"263.00000000000000000000","value":"B0263"},{"id":347,"order":"347.00000000000000000000","value":"B0347"},{"id":374,"order":"374.00000000000000000000","value":"B0374"},{"id":376,"order":"376.00000000000000000000","value":"B0376"},{"id":377,"order":"377.00000000000000000000","value":"B0377"},{"id":406,"order":"406.00000000000000000000","value":"B0406"},{"id":431,"order":"431.00000000000000000000","value":"B0431"},{"id":474,"order":"474.00000000000000000000","value":"B0474"},{"id":478,"order":"478.00000000000000000000","value":"B0478"},{"id":481,"order":"481.00000000000000000000","value":"B0481"},{"id":483,"order":"483.00000000000000000000","value":"B0483"},{"id":486,"order":"486.00000000000000000000","value":"B0486"},{"id":640,"order":"640.00000000000000000000","value":"B0640"},{"id":714,"order":"714.00000000000000000000","value":"B0714"},{"id":861,"order":"861.00000000000000000000","value":"B0861"},{"id":1098,"order":"1098.00000000000000000000","value":"B1098"},{"id":1154,"order":"1154.00000000000000000000","value":"B1154"}],"borrow_books":[],"id":122,"name":"မောင်ခင်မင်(ဓနုဖြူ)"}
+[00:20:22.736] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0122","books":[{"id":194,"order":"194.00000000000000000000","value":"B0194"},{"id":210,"order":"210.00000000000000000000","value":"B0210"},{"id":214,"order":"214.00000000000000000000","value":"B0214"},{"id":215,"order":"215.00000000000000000000","value":"B0215"},{"id":247,"order":"247.00000000000000000000","value":"B0247"},{"id":248,"order":"248.00000000000000000000","value":"B0248"},{"id":249,"order":"249.00000000000000000000","value":"B0249"},{"id":250,"order":"250.00000000000000000000","value":"B0250"},{"id":255,"order":"255.00000000000000000000","value":"B0255"},{"id":256,"order":"256.00000000000000000000","value":"B0256"},{"id":257,"order":"257.00000000000000000000","value":"B0257"},{"id":261,"order":"261.00000000000000000000","value":"B0261"},{"id":262,"order":"262.00000000000000000000","value":"B0262"},{"id":263,"order":"263.00000000000000000000","value":"B0263"},{"id":347,"order":"347.00000000000000000000","value":"B0347"},{"id":374,"order":"374.00000000000000000000","value":"B0374"},{"id":376,"order":"376.00000000000000000000","value":"B0376"},{"id":377,"order":"377.00000000000000000000","value":"B0377"},{"id":406,"order":"406.00000000000000000000","value":"B0406"},{"id":431,"order":"431.00000000000000000000","value":"B0431"},{"id":474,"order":"474.00000000000000000000","value":"B0474"},{"id":478,"order":"478.00000000000000000000","value":"B0478"},{"id":481,"order":"481.00000000000000000000","value":"B0481"},{"id":483,"order":"483.00000000000000000000","value":"B0483"},{"id":486,"order":"486.00000000000000000000","value":"B0486"},{"id":640,"order":"640.00000000000000000000","value":"B0640"},{"id":714,"order":"714.00000000000000000000","value":"B0714"},{"id":861,"order":"861.00000000000000000000","value":"B0861"},{"id":1098,"order":"1098.00000000000000000000","value":"B1098"},{"id":1154,"order":"1154.00000000000000000000","value":"B1154"}],"borrow_books":[],"id":122,"name":"မောင်ခင်မင်(ဓနုဖြူ)"}
+[00:20:30.407] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books/B0714 color: rgb(120, 120, 120) color: inherit {"dp":"/books/[id]","o":"http://localhost:3000/books/B0714","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227690856}
+[00:20:36.420] Browser LOG     Author {"author_id":"A0122","books":[{"id":194,"order":"194.00000000000000000000","value":"B0194"},{"id":210,"order":"210.00000000000000000000","value":"B0210"},{"id":214,"order":"214.00000000000000000000","value":"B0214"},{"id":215,"order":"215.00000000000000000000","value":"B0215"},{"id":247,"order":"247.00000000000000000000","value":"B0247"},{"id":248,"order":"248.00000000000000000000","value":"B0248"},{"id":249,"order":"249.00000000000000000000","value":"B0249"},{"id":250,"order":"250.00000000000000000000","value":"B0250"},{"id":255,"order":"255.00000000000000000000","value":"B0255"},{"id":256,"order":"256.00000000000000000000","value":"B0256"},{"id":257,"order":"257.00000000000000000000","value":"B0257"},{"id":261,"order":"261.00000000000000000000","value":"B0261"},{"id":262,"order":"262.00000000000000000000","value":"B0262"},{"id":263,"order":"263.00000000000000000000","value":"B0263"},{"id":347,"order":"347.00000000000000000000","value":"B0347"},{"id":374,"order":"374.00000000000000000000","value":"B0374"},{"id":376,"order":"376.00000000000000000000","value":"B0376"},{"id":377,"order":"377.00000000000000000000","value":"B0377"},{"id":406,"order":"406.00000000000000000000","value":"B0406"},{"id":431,"order":"431.00000000000000000000","value":"B0431"},{"id":474,"order":"474.00000000000000000000","value":"B0474"},{"id":478,"order":"478.00000000000000000000","value":"B0478"},{"id":481,"order":"481.00000000000000000000","value":"B0481"},{"id":483,"order":"483.00000000000000000000","value":"B0483"},{"id":486,"order":"486.00000000000000000000","value":"B0486"},{"id":640,"order":"640.00000000000000000000","value":"B0640"},{"id":714,"order":"714.00000000000000000000","value":"B0714"},{"id":861,"order":"861.00000000000000000000","value":"B0861"},{"id":1098,"order":"1098.00000000000000000000","value":"B1098"},{"id":1154,"order":"1154.00000000000000000000","value":"B1154"}],"borrow_books":[],"id":122,"name":"မောင်ခင်မင်(ဓနုဖြူ)"}
+[00:20:36.420] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0122","books":[{"id":194,"order":"194.00000000000000000000","value":"B0194"},{"id":210,"order":"210.00000000000000000000","value":"B0210"},{"id":214,"order":"214.00000000000000000000","value":"B0214"},{"id":215,"order":"215.00000000000000000000","value":"B0215"},{"id":247,"order":"247.00000000000000000000","value":"B0247"},{"id":248,"order":"248.00000000000000000000","value":"B0248"},{"id":249,"order":"249.00000000000000000000","value":"B0249"},{"id":250,"order":"250.00000000000000000000","value":"B0250"},{"id":255,"order":"255.00000000000000000000","value":"B0255"},{"id":256,"order":"256.00000000000000000000","value":"B0256"},{"id":257,"order":"257.00000000000000000000","value":"B0257"},{"id":261,"order":"261.00000000000000000000","value":"B0261"},{"id":262,"order":"262.00000000000000000000","value":"B0262"},{"id":263,"order":"263.00000000000000000000","value":"B0263"},{"id":347,"order":"347.00000000000000000000","value":"B0347"},{"id":374,"order":"374.00000000000000000000","value":"B0374"},{"id":376,"order":"376.00000000000000000000","value":"B0376"},{"id":377,"order":"377.00000000000000000000","value":"B0377"},{"id":406,"order":"406.00000000000000000000","value":"B0406"},{"id":431,"order":"431.00000000000000000000","value":"B0431"},{"id":474,"order":"474.00000000000000000000","value":"B0474"},{"id":478,"order":"478.00000000000000000000","value":"B0478"},{"id":481,"order":"481.00000000000000000000","value":"B0481"},{"id":483,"order":"483.00000000000000000000","value":"B0483"},{"id":486,"order":"486.00000000000000000000","value":"B0486"},{"id":640,"order":"640.00000000000000000000","value":"B0640"},{"id":714,"order":"714.00000000000000000000","value":"B0714"},{"id":861,"order":"861.00000000000000000000","value":"B0861"},{"id":1098,"order":"1098.00000000000000000000","value":"B1098"},{"id":1154,"order":"1154.00000000000000000000","value":"B1154"}],"borrow_books":[],"id":122,"name":"မောင်ခင်မင်(ဓနုဖြူ)"}
+[00:20:36.420] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0122 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0122","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227696867}
+[00:20:44.229] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227704653}
+[00:20:53.954] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/my-books color: rgb(120, 120, 120) color: inherit {"dp":"/my-books","o":"http://localhost:3000/my-books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766227714401}

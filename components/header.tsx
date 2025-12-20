@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { BookOpen, Search, BarChart3, Library, Shield } from "lucide-react"
+import { BookOpen, Search, BarChart3, Library, Shield, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SignOutButton } from "@/components/signout-button"
 import { useAppSelector } from "@/lib/redux/hooks"
@@ -25,6 +25,13 @@ export function Header() {
           >
             <Search className="h-4 w-4" />
             Browse Books
+          </Link>
+          <Link
+            href="/authors"
+            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Users className="h-4 w-4" />
+            Authors
           </Link>
           <Link
             href="/analytics"
@@ -71,4 +78,3 @@ export function Header() {
     </header>
   )
 }
-

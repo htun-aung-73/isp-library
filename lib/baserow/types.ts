@@ -203,6 +203,8 @@ export function mapBaserowAuthorToAuthor(author: BaserowAuthor): Author {
         id: author.id,
         author_id: author.author_id,
         name: author.name,
+        books: author.books,
+        borrow_books: author.borrow_books,
     }
 }
 

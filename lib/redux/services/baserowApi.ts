@@ -34,8 +34,8 @@ export const baserowApi = createApi({
         }),
         getAuthors: builder.query<Author[], void>({
             query: () => "api/authors",
-            transformResponse: (response: BaserowAuthor[]) =>
-                response.map(mapBaserowAuthorToAuthor),
+            transformResponse: (response: ApiReturnResponse<BaserowAuthor[]>) =>
+                response.data.map(mapBaserowAuthorToAuthor),
         }),
         getAuthorById: builder.query<Author, string>({
             query: (id) => `api/authors/${id}`,
