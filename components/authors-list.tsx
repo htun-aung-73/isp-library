@@ -52,8 +52,8 @@ export function AuthorsList() {
         <div className="space-y-10">
             <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
                 <div className="space-y-1">
-                    <h1 className="text-4xl font-black tracking-tight text-foreground">Authors</h1>
-                    <p className="text-muted-foreground text-lg">Browse our collection of {authors?.length || 0} distinguished writers.</p>
+                    <h1 className="text-3xl font-black tracking-tight text-foreground">Authors</h1>
+                    <p className="text-muted-foreground text-base">Browse our collection of {authors?.length || 0} distinguished writers.</p>
                 </div>
                 <div className="relative w-full lg:w-96 group">
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />

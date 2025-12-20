@@ -1,5 +1,6 @@
 "use client"
 
+import { useMemo } from "react"
 import {
   Bar,
   BarChart,
@@ -10,144 +11,228 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
-  Line,
-  LineChart,
   Tooltip,
   Legend,
 } from "recharts"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { useGetBooksQuery, useGetAuthorsQuery } from "@/lib/redux/services/baserowApi"
+import { Loader2, Users, BookOpen, Globe2, Building2 } from "lucide-react"
 
-interface AnalyticsChartsProps {
-  genreData: { name: string; value: number }[]
-  authorData: { name: string; books: number }[]
-  decadeData: { decade: string; count: number }[]
-}
-
-const COLORS = ["#2563eb", "#16a34a", "#ea580c", "#8b5cf6", "#ec4899"]
+const COLORS = ["#2563eb", "#16a34a", "#ea580c", "#8b5cf6", "#ec4899", "#06b6d4"]
 
 function CustomTooltip({ active, payload, label }: any) {
   if (!active || !payload || !payload.length) return null
 
   return (
-    <div className="bg-background border border-border rounded-lg shadow-lg p-3">
-      {label && <p className="font-medium text-foreground mb-1">{label}</p>}
+    <div className="border border-border rounded-xl shadow-xl p-3 backdrop-blur-md bg-card/95">
+      {label && <p className="text-sm font-semibold text-foreground mb-1.5">{label}</p>}
       {payload.map((entry: any, index: number) => (
-        <p key={index} className="text-sm" style={{ color: entry.color || entry.fill }}>
-          {entry.name || entry.dataKey}: {entry.value}
-        </p>
+        <div key={index} className="flex items-center gap-2 text-sm font-medium">
+          <div className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color || entry.fill }} />
+          <span className="text-muted-foreground">{entry.name || entry.dataKey}:</span>
+          <span className="text-foreground">{entry.value}</span>
+        </div>
       ))}
     </div>
   )
 }
 
-export function AnalyticsCharts({ genreData, authorData, decadeData }: AnalyticsChartsProps) {
+export function AnalyticsCharts() {
+  const { data: books, isLoading: booksLoading, isError: booksError } = useGetBooksQuery()
+  const { data: authors, isLoading: authorsLoading } = useGetAuthorsQuery()
+
+  const processedData = useMemo(() => {
+    if (!books) return null
+
+    const languageCounts: Record<string, number> = {}
+    books.forEach((book) => {
+      if (book.language) {
+        languageCounts[book.language] = (languageCounts[book.language] || 0) + 1
+      }
+    })
+    const languageData = Object.entries(languageCounts)
+      .map(([name, value]) => ({ name, value }))
+      .sort((a, b) => b.value - a.value)
+
+    const authorBookCounts: Record<string, number> = {}
+    books.forEach((book) => {
+      if (book.author_name) {
+        authorBookCounts[book.author_name] = (authorBookCounts[book.author_name] || 0) + 1
+      }
+    })
+    const authorData = Object.entries(authorBookCounts)
+      .map(([name, books]) => ({ name, books }))
+      .sort((a, b) => b.books - a.books)
+      .slice(0, 20) // Top 20 authors
+
+    const publisherCounts: Record<string, number> = {}
+    books.forEach((book) => {
+      if (book.publisher_name) {
+        publisherCounts[book.publisher_name] = (publisherCounts[book.publisher_name] || 0) + 1
+      }
+    })
+    const publisherData = Object.entries(publisherCounts).length
+
+    const top7Publisher = Object.entries(publisherCounts).map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 7)
+
+    return { languageData, authorData, publisherData, top7Publisher, totalBooks: books.length }
+  }, [books])
+
+  if (booksLoading || authorsLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[400px] space-y-4">
+        <Loader2 className="h-12 w-12 text-primary animate-spin" />
+        <p className="text-muted-foreground font-medium animate-pulse">Analyzing collection data...</p>
+      </div>
+    )
+  }
+
+  if (booksError || !processedData) {
+    return (
+      <div className="text-center py-20 border-2 border-dashed rounded-3xl bg-muted/20">
+        <p className="text-muted-foreground text-lg font-medium">Failed to load analytics data. Please try again later.</p>
+      </div>
+    )
+  }
+
+  const { languageData, authorData, publisherData, top7Publisher, totalBooks } = processedData
+
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
-      {/* Books by Genre Pie Chart */}
-      <Card className="border-border">
-        <CardHeader>
-          <CardTitle className="text-foreground">Books by Genre</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={genreData}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={60}
-                  outerRadius={100}
-                  paddingAngle={2}
-                  dataKey="value"
-                  label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
-                  labelLine={false}
-                >
-                  {genreData.map((_, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip content={<CustomTooltip />} />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
+    <div className="space-y-8">
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Collection Overview */}
+        <Card className="lg:col-span-2 border-border/40 bg-card/50 backdrop-blur-sm shadow-lg shadow-primary/5">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-lg font-bold">Collection Overview</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="relative group p-6 rounded-2xl bg-primary/5 border border-primary/10 hover:bg-primary/10 transition-colors">
+                <BookOpen className="h-8 w-8 text-primary/40 absolute top-4 right-4 group-hover:scale-110 transition-transform" />
+                <p className="text-3xl font-black text-primary tracking-tight">{totalBooks}</p>
+                <p className="text-xs font-bold text-primary/60 uppercase tracking-widest mt-2">Total Books</p>
+              </div>
+              <div className="relative group p-6 rounded-2xl bg-secondary/10 border border-secondary/20 hover:bg-secondary/20 transition-colors">
+                <Users className="h-8 w-8 text-secondary/80 absolute top-4 right-4 group-hover:scale-110 transition-transform" />
+                <p className="text-3xl font-black text-secondary tracking-tight">{authors?.length || authorData.length}</p>
+                <p className="text-xs font-bold text-secondary/60 uppercase tracking-widest mt-2">Authors</p>
+              </div>
+              <div className="relative group p-6 rounded-2xl bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800/20 hover:bg-orange-100 transition-colors">
+                <Globe2 className="h-8 w-8 text-orange-400 absolute top-4 right-4 group-hover:scale-110 transition-transform" />
+                <p className="text-3xl font-black text-orange-500 tracking-tight">{languageData.length}</p>
+                <p className="text-xs font-bold text-orange-600/60 uppercase tracking-widest mt-2">Languages</p>
+              </div>
+              <div className="relative group p-6 rounded-2xl bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800/20 hover:bg-amber-100 transition-colors">
+                <Building2 className="h-8 w-8 text-amber-400 absolute top-4 right-4 group-hover:scale-110 transition-transform" />
+                <p className="text-3xl font-black text-amber-500 tracking-tight">{publisherData}</p>
+                <p className="text-xs font-bold text-amber-600/60 uppercase tracking-widest mt-2">Publishers</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-      {/* Books by Author Bar Chart */}
-      <Card className="border-border">
-        <CardHeader>
-          <CardTitle className="text-foreground">Books by Author</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={authorData} layout="vertical" margin={{ left: 80 }}>
-                <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                <XAxis type="number" />
-                <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} width={75} />
-                <Tooltip content={<CustomTooltip />} />
-                <Bar dataKey="books" fill="#2563eb" radius={[0, 4, 4, 0]} name="Books" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
+        {/* Books by Language Pie Chart */}
+        <Card className="border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden">
+          <CardHeader className="pb-2">
+            <div className="flex items-center gap-2 mb-1">
+              <div className="p-2 rounded-lg bg-pink-100 dark:bg-pink-900/30 text-pink-600">
+                <Globe2 className="h-4 w-4" />
+              </div>
+              <CardTitle className="text-lg font-bold">Books by Language</CardTitle>
+            </div>
+            <CardDescription>Linguistic diversity of our collection</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="h-[400px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={languageData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={100}
+                    outerRadius={150}
+                    paddingAngle={1}
+                    dataKey="value"
+                    stroke="none"
+                  >
+                    {languageData.map((_, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} className="focus:outline-none" />
+                    ))}
+                  </Pie>
+                  <Tooltip content={<CustomTooltip />} />
+                  <Legend verticalAlign="bottom" iconType="circle" iconSize={12} wrapperStyle={{
+                    fontSize: '13px',
+                    fontFamily: 'manrope',
+                  }} />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </CardContent>
+        </Card>
 
-      {/* Books by Decade Line Chart */}
-      <Card className="lg:col-span-2 border-border">
-        <CardHeader>
-          <CardTitle className="text-foreground">Books by Publication Decade</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="h-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={decadeData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="decade" />
-                <YAxis />
-                <Tooltip content={<CustomTooltip />} />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="count"
-                  stroke="#16a34a"
-                  strokeWidth={2}
-                  dot={{ fill: "#16a34a", strokeWidth: 2 }}
-                  name="Number of Books"
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
+        {/* Top Publishers Bar Chart */}
+        <Card className="border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden">
+          <CardHeader className="pb-2">
+            <div className="flex items-center gap-2 mb-1">
+              <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600">
+                <Building2 className="h-4 w-4" />
+              </div>
+              <CardTitle className="text-xl font-bold">Top Publishers</CardTitle>
+            </div>
+            <CardDescription>Major publishing houses represented in our collection</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="h-[400px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={top7Publisher} margin={{ top: 10, right: 30, left: 10, bottom: 60 }}>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                  <XAxis dataKey="name" tickLine={false} tick={{ fontSize: 11, fontWeight: 500 }} angle={-25} textAnchor="end" height={60} />
+                  <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fontWeight: 500 }} />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Bar dataKey="count" fill="#16a34a" radius={[4, 4, 0, 0]} name="Books">
+                    {top7Publisher.map((_, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[(index + 2) % COLORS.length]} fillOpacity={0.8} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </CardContent>
+        </Card>
 
-      {/* Summary Stats */}
-      <Card className="lg:col-span-2 border-border">
-        <CardHeader>
-          <CardTitle className="text-foreground">Collection Summary</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="p-4 bg-secondary/50 rounded-lg text-center">
-              <p className="text-3xl font-bold text-primary">{genreData.reduce((sum, g) => sum + g.value, 0)}</p>
-              <p className="text-sm text-muted-foreground">Total Books</p>
+        {/* Top Authors Bar Chart */}
+        <Card className="lg:col-span-2 border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden">
+          <CardHeader className="pb-2">
+            <div className="flex items-center gap-2 mb-1">
+              <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600">
+                <Users className="h-4 w-4" />
+              </div>
+              <CardTitle className="text-lg font-bold">Top Authors</CardTitle>
             </div>
-            <div className="p-4 bg-secondary/50 rounded-lg text-center">
-              <p className="text-3xl font-bold text-primary">{authorData.length}</p>
-              <p className="text-sm text-muted-foreground">Authors</p>
+            <CardDescription>Most prolific contributors in our collection</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="h-[700px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={authorData} layout="vertical" margin={{ left: 160, right: 90 }}>
+                  <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                  <XAxis type="number" tick={{ fontSize: 11, fontWeight: 500 }} />
+                  <YAxis type="category" dataKey="name" width={150} tick={{ fontSize: 12, fontWeight: 500 }} />
+                  <Tooltip content={<CustomTooltip />} cursor={{ fill: 'transparent' }} />
+                  <Bar dataKey="books" fill="#2563eb" radius={[0, 4, 4, 0]} name="Books" barSize={30}>
+                    {authorData.map((_, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} fillOpacity={0.8} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
             </div>
-            <div className="p-4 bg-secondary/50 rounded-lg text-center">
-              <p className="text-3xl font-bold text-primary">{genreData.length}</p>
-              <p className="text-sm text-muted-foreground">Genres</p>
-            </div>
-            <div className="p-4 bg-secondary/50 rounded-lg text-center">
-              <p className="text-3xl font-bold text-primary">{decadeData.length}</p>
-              <p className="text-sm text-muted-foreground">Decades Covered</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }

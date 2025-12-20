@@ -53,92 +53,47 @@ __turbopack_context__.s([
     ()=>AnalyticsPage
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.0.10_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$client$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/baserow/client.ts [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$analytics$2d$charts$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/analytics-charts.tsx [app-rsc] (ecmascript)");
 ;
 ;
-;
-async function AnalyticsPage() {
-    // Get books from Baserow
-    const books = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$client$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getBooks"])();
-    // Get authors from Baserow
-    const authors = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$baserow$2f$client$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAuthors"])();
-    // Process genre data
-    const genreCounts = {};
-    books?.forEach((book)=>{
-        if (book.genre) {
-            genreCounts[book.genre] = (genreCounts[book.genre] || 0) + 1;
-        }
-    });
-    const genreData = Object.entries(genreCounts).map(([name, value])=>({
-            name,
-            value
-        }));
-    // Process author data - count books per author
-    const authorBookCounts = {};
-    books?.forEach((book)=>{
-        if (book.author?.name) {
-            authorBookCounts[book.author.name] = (authorBookCounts[book.author.name] || 0) + 1;
-        }
-    });
-    const authorData = Object.entries(authorBookCounts).map(([name, books])=>({
-            name,
-            books
-        }));
-    // Process decade data
-    const decadeCounts = {};
-    books?.forEach((book)=>{
-        if (book.published_year) {
-            const decade = Math.floor(book.published_year / 10) * 10;
-            const decadeLabel = `${decade}s`;
-            decadeCounts[decadeLabel] = (decadeCounts[decadeLabel] || 0) + 1;
-        }
-    });
-    const decadeData = Object.entries(decadeCounts).map(([decade, count])=>({
-            decade,
-            count
-        })).sort((a, b)=>a.decade.localeCompare(b.decade));
+function AnalyticsPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "container mx-auto px-4 py-8",
+        className: "container mx-auto px-4 py-12",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mb-8",
+                className: "mb-10",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-3xl font-bold mb-2",
+                        className: "text-3xl font-black tracking-tight text-foreground",
                         children: "Library Analytics"
                     }, void 0, false, {
                         fileName: "[project]/app/analytics/page.tsx",
-                        lineNumber: 51,
+                        lineNumber: 7,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-muted-foreground",
-                        children: "Insights into our book collection and authors"
+                        className: "text-muted-foreground text-base",
+                        children: "Visualizing our collection growth and diversity"
                     }, void 0, false, {
                         fileName: "[project]/app/analytics/page.tsx",
-                        lineNumber: 52,
+                        lineNumber: 8,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/analytics/page.tsx",
-                lineNumber: 50,
+                lineNumber: 6,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$analytics$2d$charts$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AnalyticsCharts"], {
-                genreData: genreData,
-                authorData: authorData,
-                decadeData: decadeData
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$analytics$2d$charts$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AnalyticsCharts"], {}, void 0, false, {
                 fileName: "[project]/app/analytics/page.tsx",
-                lineNumber: 55,
+                lineNumber: 11,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/analytics/page.tsx",
-        lineNumber: 49,
+        lineNumber: 5,
         columnNumber: 5
     }, this);
 }

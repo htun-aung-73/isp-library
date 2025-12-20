@@ -1,4 +1,11 @@
 {
   "/admin/page": "app/admin/page.js",
-  "/analytics/page": "app/analytics/page.js"
+  "/analytics/page": "app/analytics/page.js",
+  "/api/authors/[id]/books/route": "app/api/authors/[id]/books/route.js",
+  "/api/authors/[id]/route": "app/api/authors/[id]/route.js",
+  "/api/authors/route": "app/api/authors/route.js",
+  "/api/books/route": "app/api/books/route.js",
+  "/authors/[id]/page": "app/authors/[id]/page.js",
+  "/authors/page": "app/authors/page.js",
+  "/books/page": "app/books/page.js"
 }
