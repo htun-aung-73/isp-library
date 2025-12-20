@@ -224,7 +224,7 @@ export function AnalyticsCharts() {
                   <Tooltip content={<CustomTooltip />} cursor={{ fill: 'transparent' }} />
                   <Bar dataKey="books" fill="#2563eb" radius={[0, 4, 4, 0]} name="Books" barSize={30}>
                     {authorData.map((_, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} fillOpacity={0.8} />
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} fillOpacity={0.7} />
                     ))}
                   </Bar>
                 </BarChart>

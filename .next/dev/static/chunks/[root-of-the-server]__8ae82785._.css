@@ -1333,20 +1333,8 @@
     height: 60vh;
   }
 
-  .h-\[320px\] {
-    height: 320px;
-  }
-
-  .h-\[350px\] {
-    height: 350px;
-  }
-
   .h-\[400px\] {
     height: 400px;
-  }
-
-  .h-\[500px\] {
-    height: 500px;
   }
 
   .h-\[600px\] {
@@ -2985,26 +2973,12 @@
     color: var(--destructive-foreground);
   }
 
-  .text-emerald-400 {
-    color: var(--color-emerald-400);
-  }
-
   .text-emerald-500 {
     color: var(--color-emerald-500);
   }
 
   .text-emerald-600 {
     color: var(--color-emerald-600);
-  }
-
-  .text-emerald-600\/60 {
-    color: #00976799;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .text-emerald-600\/60 {
-      color: color-mix(in oklab, var(--color-emerald-600) 60%, transparent);
-    }
   }
 
   .text-emerald-700 {
@@ -3049,10 +3023,6 @@
 
   .text-orange-500 {
     color: var(--color-orange-500);
-  }
-
-  .text-orange-600 {
-    color: var(--color-orange-600);
   }
 
   .text-orange-600\/60 {
@@ -3955,12 +3925,6 @@
   @media (hover: hover) {
     .hover\:bg-emerald-50:hover {
       background-color: var(--color-emerald-50);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-emerald-100:hover {
-      background-color: var(--color-emerald-100);
     }
   }
 
@@ -5801,18 +5765,6 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    .dark\:border-emerald-800\/20 {
-      border-color: #005f4633;
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .dark\:border-emerald-800\/20 {
-        border-color: color-mix(in oklab, var(--color-emerald-800) 20%, transparent);
-      }
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
     .dark\:border-input {
       border-color: var(--input);
     }
@@ -5874,18 +5826,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       .dark\:bg-destructive\/60 {
         background-color: color-mix(in oklab, var(--destructive) 60%, transparent);
-      }
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .dark\:bg-emerald-900\/10 {
-      background-color: #004e3b1a;
-    }
-
-    @supports (color: color-mix(in lab, red, red)) {
-      .dark\:bg-emerald-900\/10 {
-        background-color: color-mix(in oklab, var(--color-emerald-900) 10%, transparent);
       }
     }
   }

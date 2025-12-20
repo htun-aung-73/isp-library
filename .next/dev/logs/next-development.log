@@ -1,6 +1,5 @@
-[00:00:01.241] Server  LOG      ✓ Ready in 998ms
-[00:00:04.443] Server  LOG      ○ Compiling /analytics ...
-[00:00:06.702] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:01.493] Server  LOG      ✓ Ready in 1221ms
+[00:00:12.614] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -39,317 +38,36 @@ It can also happen if the client has a browser extension installed which messes 
                           >
                   ...
 
-[00:00:06.702] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:06.702] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[00:00:06.702] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245026983}
-[00:01:39.115] Server  LOG      ✓ Compiled in 129ms
-[00:01:39.285] Browser ERROR   uncaughtError: TypeError: publisherData.map is not a function
-[00:01:45.185] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:01:45.203] Server  LOG      ✓ Compiled in 93ms
-[00:01:45.335] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245125607}
-[00:01:46.560] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:46.560] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[00:01:46.560] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245126850}
-[00:01:51.133] Browser ERROR   uncaughtError: TypeError: publisherData.map is not a function
-[00:01:58.961] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:01:58.975] Server  LOG      ✓ Compiled in 362ms
-[00:01:59.671] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:59.671] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[00:01:59.671] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245139963}
-[00:02:05.289] Browser ERROR   uncaughtError: TypeError: publisherData.map is not a function
-[00:02:07.359] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:02:07.378] Server  LOG      ✓ Compiled in 73ms
-[00:02:08.018] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:02:08.018] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[00:02:08.018] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245148310}
-[00:02:11.891] Server  LOG      ✓ Compiled in 104ms
-[00:04:00.136] Server  LOG      ✓ Compiled in 182ms
-[00:04:09.321] Server  LOG      ✓ Compiled in 95ms
-[00:04:34.111] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245294370}
-[00:04:45.006] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors/A0399 color: rgb(120, 120, 120) color: inherit {"dp":"/authors/[id]","o":"http://localhost:3000/authors/A0399","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245305292}
-[00:04:47.193] Browser LOG     Author {"author_id":"A0399","books":[{"id":922,"order":"922.00000000000000000000","value":"B0922"},{"id":923,"order":"923.00000000000000000000","value":"B0923"},{"id":924,"order":"924.00000000000000000000","value":"B0924"},{"id":925,"order":"925.00000000000000000000","value":"B0925"},{"id":926,"order":"926.00000000000000000000","value":"B0926"},{"id":927,"order":"927.00000000000000000000","value":"B0927"},{"id":928,"order":"928.00000000000000000000","value":"B0928"},{"id":929,"order":"929.00000000000000000000","value":"B0929"},{"id":930,"order":"930.00000000000000000000","value":"B0930"},{"id":931,"order":"931.00000000000000000000","value":"B0931"},{"id":932,"order":"932.00000000000000000000","value":"B0932"},{"id":933,"order":"933.00000000000000000000","value":"B0933"},{"id":934,"order":"934.00000000000000000000","value":"B0934"},{"id":935,"order":"935.00000000000000000000","value":"B0935"},{"id":936,"order":"936.00000000000000000000","value":"B0936"},{"id":937,"order":"937.00000000000000000000","value":"B0937"},{"id":938,"order":"938.00000000000000000000","value":"B0938"},{"id":939,"order":"939.00000000000000000000","value":"B0939"},{"id":940,"order":"940.00000000000000000000","value":"B0940"},{"id":941,"order":"941.00000000000000000000","value":"B0941"},{"id":942,"order":"942.00000000000000000000","value":"B0942"},{"id":943,"order":"943.00000000000000000000","value":"B0943"},{"id":944,"order":"944.00000000000000000000","value":"B0944"},{"id":945,"order":"945.00000000000000000000","value":"B0945"},{"id":946,"order":"946.00000000000000000000","value":"B0946"},{"id":947,"order":"947.00000000000000000000","value":"B0947"},{"id":948,"order":"948.00000000000000000000","value":"B0948"},{"id":949,"order":"949.00000000000000000000","value":"B0949"},{"id":950,"order":"950.00000000000000000000","value":"B0950"},{"id":951,"order":"951.00000000000000000000","value":"B0951"},{"id":952,"order":"952.00000000000000000000","value":"B0952"},{"id":953,"order":"953.00000000000000000000","value":"B0953"},{"id":954,"order":"954.00000000000000000000","value":"B0954"},{"id":955,"order":"955.00000000000000000000","value":"B0955"},{"id":956,"order":"956.00000000000000000000","value":"B0956"},{"id":957,"order":"957.00000000000000000000","value":"B0957"},{"id":958,"order":"958.00000000000000000000","value":"B0958"},{"id":959,"order":"959.00000000000000000000","value":"B0959"},{"id":960,"order":"960.00000000000000000000","value":"B0960"},{"id":961,"order":"961.00000000000000000000","value":"B0961"},{"id":962,"order":"962.00000000000000000000","value":"B0962"},{"id":963,"order":"963.00000000000000000000","value":"B0963"},{"id":964,"order":"964.00000000000000000000","value":"B0964"},{"id":965,"order":"965.00000000000000000000","value":"B0965"},{"id":966,"order":"966.00000000000000000000","value":"B0966"},{"id":967,"order":"967.00000000000000000000","value":"B0967"},{"id":968,"order":"968.00000000000000000000","value":"B0968"},{"id":969,"order":"969.00000000000000000000","value":"B0969"}],"borrow_books":[],"id":399,"name":"စာပေဗိမာန်"}
-[00:04:47.193] Browser LOG     [2;38;2;124;124;124m%s[0m Author {"author_id":"A0399","books":[{"id":922,"order":"922.00000000000000000000","value":"B0922"},{"id":923,"order":"923.00000000000000000000","value":"B0923"},{"id":924,"order":"924.00000000000000000000","value":"B0924"},{"id":925,"order":"925.00000000000000000000","value":"B0925"},{"id":926,"order":"926.00000000000000000000","value":"B0926"},{"id":927,"order":"927.00000000000000000000","value":"B0927"},{"id":928,"order":"928.00000000000000000000","value":"B0928"},{"id":929,"order":"929.00000000000000000000","value":"B0929"},{"id":930,"order":"930.00000000000000000000","value":"B0930"},{"id":931,"order":"931.00000000000000000000","value":"B0931"},{"id":932,"order":"932.00000000000000000000","value":"B0932"},{"id":933,"order":"933.00000000000000000000","value":"B0933"},{"id":934,"order":"934.00000000000000000000","value":"B0934"},{"id":935,"order":"935.00000000000000000000","value":"B0935"},{"id":936,"order":"936.00000000000000000000","value":"B0936"},{"id":937,"order":"937.00000000000000000000","value":"B0937"},{"id":938,"order":"938.00000000000000000000","value":"B0938"},{"id":939,"order":"939.00000000000000000000","value":"B0939"},{"id":940,"order":"940.00000000000000000000","value":"B0940"},{"id":941,"order":"941.00000000000000000000","value":"B0941"},{"id":942,"order":"942.00000000000000000000","value":"B0942"},{"id":943,"order":"943.00000000000000000000","value":"B0943"},{"id":944,"order":"944.00000000000000000000","value":"B0944"},{"id":945,"order":"945.00000000000000000000","value":"B0945"},{"id":946,"order":"946.00000000000000000000","value":"B0946"},{"id":947,"order":"947.00000000000000000000","value":"B0947"},{"id":948,"order":"948.00000000000000000000","value":"B0948"},{"id":949,"order":"949.00000000000000000000","value":"B0949"},{"id":950,"order":"950.00000000000000000000","value":"B0950"},{"id":951,"order":"951.00000000000000000000","value":"B0951"},{"id":952,"order":"952.00000000000000000000","value":"B0952"},{"id":953,"order":"953.00000000000000000000","value":"B0953"},{"id":954,"order":"954.00000000000000000000","value":"B0954"},{"id":955,"order":"955.00000000000000000000","value":"B0955"},{"id":956,"order":"956.00000000000000000000","value":"B0956"},{"id":957,"order":"957.00000000000000000000","value":"B0957"},{"id":958,"order":"958.00000000000000000000","value":"B0958"},{"id":959,"order":"959.00000000000000000000","value":"B0959"},{"id":960,"order":"960.00000000000000000000","value":"B0960"},{"id":961,"order":"961.00000000000000000000","value":"B0961"},{"id":962,"order":"962.00000000000000000000","value":"B0962"},{"id":963,"order":"963.00000000000000000000","value":"B0963"},{"id":964,"order":"964.00000000000000000000","value":"B0964"},{"id":965,"order":"965.00000000000000000000","value":"B0965"},{"id":966,"order":"966.00000000000000000000","value":"B0966"},{"id":967,"order":"967.00000000000000000000","value":"B0967"},{"id":968,"order":"968.00000000000000000000","value":"B0968"},{"id":969,"order":"969.00000000000000000000","value":"B0969"}],"borrow_books":[],"id":399,"name":"စာပေဗိမာန်"}
-[00:04:59.474] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245319746}
-[00:05:04.573] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245324859}
-[00:05:07.538] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245327749}
-[00:05:37.638] Server  LOG      ✓ Compiled in 185ms
-[00:05:55.638] Server  LOG      ✓ Compiled in 100ms
-[00:06:46.561] Server  LOG      ✓ Compiled in 140ms
-[00:07:11.293] Server  LOG      ✓ Compiled in 228ms
-[00:07:32.889] Server  LOG      ✓ Compiled in 136ms
-[00:07:42.789] Server  LOG      ✓ Compiled in 94ms
-[00:07:47.550] Server  LOG      ✓ Compiled in 104ms
-[00:07:51.708] Server  LOG      ✓ Compiled in 96ms
-[00:07:56.739] Server  LOG      ✓ Compiled in 111ms
-[00:08:00.018] Server  LOG      ✓ Compiled in 86ms
-[00:09:43.665] Server  LOG      ✓ Compiled in 192ms
-[00:10:08.245] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245628522}
-[00:10:52.068] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245672252}
-[00:11:19.315] Server  LOG      ✓ Compiled in 251ms
-[00:11:27.141] Server  LOG      ✓ Compiled in 165ms
-[00:11:53.496] Server  LOG      ✓ Compiled in 110ms
-[00:12:06.459] Server  LOG      ✓ Compiled in 148ms
-[00:12:49.920] Server  LOG      ✓ Compiled in 265ms
-[00:13:33.878] Server  LOG      ✓ Compiled in 92ms
-[00:14:40.638] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245900900}
-[00:14:55.587] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766245915780}
-[00:22:06.096] Server  LOG      ✓ Compiled in 394ms
-[00:23:06.161] Server  LOG      ✓ Compiled in 112ms
-[00:23:36.833] Server  LOG      ✓ Compiled in 124ms
-[00:23:40.985] Server  LOG      ✓ Compiled in 103ms
-[00:23:50.979] Server  LOG      ✓ Compiled in 131ms
-[00:25:49.223] Server  LOG      ✓ Compiled in 158ms
-[00:25:55.199] Server  LOG      ✓ Compiled in 108ms
-[00:26:05.891] Server  LOG      ✓ Compiled in 158ms
-[00:26:54.253] Server  LOG      ✓ Compiled in 97ms
-[00:27:08.382] Server  LOG      ✓ Compiled in 142ms
-[00:28:10.325] Server  LOG      ✓ Compiled in 160ms
-[00:28:15.887] Server  LOG      ✓ Compiled in 130ms
-[00:28:23.750] Server  LOG      ✓ Compiled in 99ms
-[00:29:25.852] Server  LOG      ✓ Compiled in 91ms
-[00:29:45.981] Server  LOG      ✓ Compiled in 353ms
-[00:29:57.911] Server  LOG      ✓ Compiled in 95ms
-[00:30:03.955] Server  LOG      ✓ Compiled in 86ms
-[00:30:07.467] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766246827696}
-[00:30:08.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766246828533}
-[00:30:14.181] Server  LOG      ✓ Compiled in 86ms
-[00:30:20.556] Server  LOG      ✓ Compiled in 126ms
-[00:30:27.875] Server  LOG      ✓ Compiled in 136ms
-[00:30:40.566] Server  LOG      ✓ Compiled in 74ms
-[00:30:55.521] Server  LOG      ✓ Compiled in 94ms
-[00:31:36.925] Server  LOG      ✓ Compiled in 164ms
-[00:31:43.533] Server  LOG      ✓ Compiled in 82ms
-[00:31:46.278] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766246926529}
-[00:31:47.071] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766246927327}
-[00:31:52.520] Server  LOG      ✓ Compiled in 116ms
-[00:32:01.340] Server  LOG      ✓ Compiled in 232ms
-[00:32:31.365] Server  LOG      ✓ Compiled in 185ms
-[00:33:13.683] Server  LOG      ✓ Compiled in 151ms
-[00:33:48.344] Server  LOG      ✓ Compiled in 869ms
-[00:33:57.710] Server  LOG      ✓ Compiled in 122ms
-[00:34:03.774] Server  LOG      ✓ Compiled in 103ms
-[00:34:09.485] Server  LOG      ✓ Compiled in 98ms
-[00:34:21.778] Server  LOG      ✓ Compiled in 104ms
-[00:34:31.043] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/analytics" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:34:31.043] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:34:31.043] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[00:34:31.043] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247091173}
-[00:34:40.107] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247100201}
-[00:34:41.132] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247101260}
-[00:34:42.784] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247102913}
-[00:34:44.048] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247104150}
-[00:34:45.476] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247105531}
-[00:34:47.209] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247107323}
-[00:35:33.477] Server  LOG      ✓ Compiled in 105ms
-[00:35:38.547] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247158514}
-[00:35:39.815] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247159915}
-[00:35:47.399] Server  LOG      ✓ Compiled in 95ms
-[00:36:22.888] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247203013}
-[00:36:27.279] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247207307}
-[00:36:28.377] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247208477}
-[00:36:29.358] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766247209419}
-[00:38:56.304] Server  LOG      ✓ Compiled in 194ms
-[00:39:11.574] Server  LOG      ✓ Compiled in 88ms
-[00:39:19.253] Server  LOG      ✓ Compiled in 118ms
-[00:39:36.150] Server  LOG      ✓ Compiled in 93ms
-[00:39:59.115] Server  LOG      ✓ Compiled in 101ms
-[00:40:06.738] Server  LOG      ✓ Compiled in 95ms
-[00:40:21.148] Server  LOG      ✓ Compiled in 122ms
-[00:41:11.651] Server  LOG      ✓ Compiled in 101ms
-[00:43:38.250] Server  LOG      ✓ Compiled in 471ms
-[00:43:45.424] Server  LOG      ✓ Compiled in 118ms
-[00:43:58.217] Server  LOG      ✓ Compiled in 104ms
-[00:44:33.793] Server  LOG      ✓ Compiled in 136ms
-[00:45:12.711] Server  LOG      ✓ Compiled in 220ms
-[00:45:19.731] Server  LOG      ✓ Compiled in 77ms
-[00:45:33.067] Server  LOG      ✓ Compiled in 81ms
-[00:45:43.452] Server  LOG      ✓ Compiled in 104ms
-[00:46:55.568] Server  LOG      ✓ Compiled in 238ms
-[00:47:11.427] Server  LOG      ✓ Compiled in 122ms
-[00:47:29.479] Server  LOG      ✓ Compiled in 155ms
-[00:47:46.556] Server  LOG      ✓ Compiled in 97ms
-[00:47:48.377] Server  LOG      ✓ Compiled in 83ms
-[00:48:07.543] Server  LOG      ✓ Compiled in 107ms
-[00:49:15.825] Server  LOG      ✓ Compiled in 183ms
-[00:49:25.756] Server  LOG      ✓ Compiled in 345ms
-[00:49:33.566] Server  LOG      ✓ Compiled in 94ms
-[00:49:39.003] Server  LOG      ✓ Compiled in 89ms
-[00:50:12.791] Server  LOG      ✓ Compiled in 113ms
-[00:50:17.981] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/analytics" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[00:50:17.981] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:50:17.981] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[00:50:17.981] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766248038237}
-[00:50:25.701] Browser WARN    SerializableStateInvariantMiddleware took 53ms, which is more than the warning threshold of 32ms. 
-If your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.
-It is disabled in production builds, so you don't need to worry about that.
-[00:50:45.102] Server  LOG      ✓ Compiled in 625ms
-[00:50:45.216] Browser ERROR   uncaughtError: ReferenceError: LabelList is not defined
-[00:51:00.712] Server  LOG      ✓ Compiled in 655ms
-[00:51:00.732] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:51:00.913] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766248081138}
-[00:51:02.244] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:51:02.244] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[00:51:02.244] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766248082496}
-[00:51:43.658] Server  LOG      ✓ Compiled in 149ms
-[00:52:01.580] Server  LOG      ✓ Compiled in 141ms
-[00:52:12.965] Server  LOG      ✓ Compiled in 113ms
-[00:53:30.689] Server  LOG      ✓ Compiled in 157ms
-[00:53:37.842] Server  LOG      ✓ Compiled in 122ms
-[00:56:25.518] Server  LOG      ✓ Compiled in 151ms
-[00:56:38.417] Server  LOG      ✓ Compiled in 120ms
-[00:59:09.128] Server  LOG      ✓ Compiled in 118ms
-[00:59:09.221] Browser LOG     Publisher Counts {"Another Development (AD)":1,"Arakan Dream Publishing House":2,"Bagan Princess Publicatins":4,"Bipolarbear":1,"Dynasty Books":1,"Exit Book Publishing House":1,"FIM":1,"Grace Printing House":3,"Halcyon":3,"Inspired Myanmar":1,"International IDEA":1,"Kawao Newsgroup":1,"Konrad Adenauer Stiftung":2,"Kyipwayay Publishing House":1,"Momentum Book Publishing":1,"Myanmar Book Center":2,"Myanmar Book Centre":1,"Myanmar Harp Pblishing House":2,"Myanmar Heritage Publications":2,"Myanmar Identity":1,"Myanmar Institute For Peace and Security":1,"Myanmar Peace Center":2,"Myanmar Representative Office":1,"Ninu (Women in Action Group)":1,"Organizer Team for GLT/ PLT (20) Commemorative Book":2,"Perfect စာပေ":1,"Politics For Women Myanmar":1,"Quality Publishing House":2,"SACC":1,"SMART စာပေ":2,"Saferworld":4,"Sarnadi (Text River) Publishing House":1,"Shan Book Club စာပေ":1,"The Power":1,"The centre for peace and conflit studies":1,"Transnational Institute":1,"UNLD Press":1,"USAID":1,"Unity စာပေ":5,"Unityစာပေ":2,"the key collection":19,"ကနုတ်ပန်းစာပေ":1,"ကမာရွတ်စာတိုက်":1,"ကမ္ဘာလုံးစာပေ":1,"ကရင်နီပြည်လူမျိုးပေါင်းစုံပြည်သူ့လွတ်မြောက်ရေးတပ်ဦး":1,"ကရင်နီလူထုအခြေပြုအရပ်ဖက်လူမှုအသင်းအဖွဲ့များ":1,"ကရင်အမျိုးသားအစည်းအရုံး":2,"ကာကွယ်ရေးဝန်ကြီးဌာန":1,"ကာလာစုံပုံနှိပ်တိုက်":1,"ကိုသူရ (ဇာဂနာ)":1,"ကုဋေကုဋာစာပေ":1,"ကုလသမဂ္ဂအမျိုးသမီးများရေးရာအဖွဲ့":1,"ကုသလဝတီပုံနှိပ်တိုက်":1,"ကောင်းထွဋ်စာပေ":1,"ကံ့ကော်ဝတ်ရည်စာ‌ပေ":9,"ကျော်မွှေးစာပေ":9,"ကျော်ဝင်းဆွေပုံနှိပ်တိုက်":1,"ကျော်ဝင်း၊ ဦး":1,"ကြည်သာစာပေ":1,"ကြယ်နီစာပေ":1,"ကြယ်ပွင့်စာပေ":1,"ကြီးပွားရေးစာအုပ်တိုက်":66,"ကွမ်းခြံလမ်းစာပေ":2,"ခရေဖူး(ဥပဒေ)စာပေတိုက်":3,"ခုနှစ်စင်ကြယ်စာပေ":1,"ခေါင်းလောင်းသံစာပေ":1,"ချင်းတွင်းအိမ်စာပေ":2,"ချမ်းသာစာပေ":2,"ချမ်းသာစာအုပ်တိုက်":1,"ချိုတေးသံစာပေ":1,"ချုလာလောင်ကွန်တက္ကသိုလ်ပုံနှိပ်တိုက်":2,"ခြူးခြုးစာအုပ်တိုက်":1,"ခြူးခြူးစာအုပ်တိုက်":1,"ခွန်းမတ်ရ်ကိုဘန်":1,"ဂန့်ဂေါ်မြိုင်စာပေ":2,"ဂုဏ်ထူးစာပေ":1,"ဂျာနယ်လစ်စာပေ":1,"ဂျူတီစာပေ":7,"ဂျူပီတာစာပေ":1,"ဂျေ၊ အေ၊ လူဂတ်":1,"ငဝန်စာပေ":2,"ငါတို့စာပေ":8,"ငြိမ်းချမ်းမျှတ လူမှုအဖွဲ့အစည်း၊ ဒါန- ရှေ့ဆောင်မြန်မာ၊ အောက်ချင်းလူမှုအဖွဲ့အစည်း":1,"ငြိမ်းချမ်းရေးအတွက် ကျား၊ မ တန်းတူရေးမဟာမိတ်အဖွဲ့":1,"စ အက္ခရာစာပေ":1,"စကားပြောနေသူများစာပေ":1,"စစ်သည်တော်စာပေ":2,"စန်းရောင်ရှိန်စာပေ":2,"စာနဒီစာပေ":4,"စာနဒီစာအုပ်":1,"စာနဒီစာအုပ်တိုက်":4,"စာပေဗိမာန်":66,"စာပေလောက စာအုပ်တိုက်":3,"စာပေလောကစာအုပ်တိုက်":1,"စာပေသစ်စာပေ":1,"စာရိပ်မြိုင်စာပေ":1,"စာအုပ်စျေး စာအုပ်တိုက်":1,"စာအုပ်စျေးစာအုပ်တိုက်":3,"စာအုပ်ဈေးစာအုပ်တိုက်":5,"စာ‌ပေခရီးသွားများစာအုပ်တိုက်":3,"...":"332 items not stringified"}
-[00:59:09.221] Browser LOG     [2;38;2;124;124;124m%s[0m Publisher Counts {"Another Development (AD)":1,"Arakan Dream Publishing House":2,"Bagan Princess Publicatins":4,"Bipolarbear":1,"Dynasty Books":1,"Exit Book Publishing House":1,"FIM":1,"Grace Printing House":3,"Halcyon":3,"Inspired Myanmar":1,"International IDEA":1,"Kawao Newsgroup":1,"Konrad Adenauer Stiftung":2,"Kyipwayay Publishing House":1,"Momentum Book Publishing":1,"Myanmar Book Center":2,"Myanmar Book Centre":1,"Myanmar Harp Pblishing House":2,"Myanmar Heritage Publications":2,"Myanmar Identity":1,"Myanmar Institute For Peace and Security":1,"Myanmar Peace Center":2,"Myanmar Representative Office":1,"Ninu (Women in Action Group)":1,"Organizer Team for GLT/ PLT (20) Commemorative Book":2,"Perfect စာပေ":1,"Politics For Women Myanmar":1,"Quality Publishing House":2,"SACC":1,"SMART စာပေ":2,"Saferworld":4,"Sarnadi (Text River) Publishing House":1,"Shan Book Club စာပေ":1,"The Power":1,"The centre for peace and conflit studies":1,"Transnational Institute":1,"UNLD Press":1,"USAID":1,"Unity စာပေ":5,"Unityစာပေ":2,"the key collection":19,"ကနုတ်ပန်းစာပေ":1,"ကမာရွတ်စာတိုက်":1,"ကမ္ဘာလုံးစာပေ":1,"ကရင်နီပြည်လူမျိုးပေါင်းစုံပြည်သူ့လွတ်မြောက်ရေးတပ်ဦး":1,"ကရင်နီလူထုအခြေပြုအရပ်ဖက်လူမှုအသင်းအဖွဲ့များ":1,"ကရင်အမျိုးသားအစည်းအရုံး":2,"ကာကွယ်ရေးဝန်ကြီးဌာန":1,"ကာလာစုံပုံနှိပ်တိုက်":1,"ကိုသူရ (ဇာဂနာ)":1,"ကုဋေကုဋာစာပေ":1,"ကုလသမဂ္ဂအမျိုးသမီးများရေးရာအဖွဲ့":1,"ကုသလဝတီပုံနှိပ်တိုက်":1,"ကောင်းထွဋ်စာပေ":1,"ကံ့ကော်ဝတ်ရည်စာ‌ပေ":9,"ကျော်မွှေးစာပေ":9,"ကျော်ဝင်းဆွေပုံနှိပ်တိုက်":1,"ကျော်ဝင်း၊ ဦး":1,"ကြည်သာစာပေ":1,"ကြယ်နီစာပေ":1,"ကြယ်ပွင့်စာပေ":1,"ကြီးပွားရေးစာအုပ်တိုက်":66,"ကွမ်းခြံလမ်းစာပေ":2,"ခရေဖူး(ဥပဒေ)စာပေတိုက်":3,"ခုနှစ်စင်ကြယ်စာပေ":1,"ခေါင်းလောင်းသံစာပေ":1,"ချင်းတွင်းအိမ်စာပေ":2,"ချမ်းသာစာပေ":2,"ချမ်းသာစာအုပ်တိုက်":1,"ချိုတေးသံစာပေ":1,"ချုလာလောင်ကွန်တက္ကသိုလ်ပုံနှိပ်တိုက်":2,"ခြူးခြုးစာအုပ်တိုက်":1,"ခြူးခြူးစာအုပ်တိုက်":1,"ခွန်းမတ်ရ်ကိုဘန်":1,"ဂန့်ဂေါ်မြိုင်စာပေ":2,"ဂုဏ်ထူးစာပေ":1,"ဂျာနယ်လစ်စာပေ":1,"ဂျူတီစာပေ":7,"ဂျူပီတာစာပေ":1,"ဂျေ၊ အေ၊ လူဂတ်":1,"ငဝန်စာပေ":2,"ငါတို့စာပေ":8,"ငြိမ်းချမ်းမျှတ လူမှုအဖွဲ့အစည်း၊ ဒါန- ရှေ့ဆောင်မြန်မာ၊ အောက်ချင်းလူမှုအဖွဲ့အစည်း":1,"ငြိမ်းချမ်းရေးအတွက် ကျား၊ မ တန်းတူရေးမဟာမိတ်အဖွဲ့":1,"စ အက္ခရာစာပေ":1,"စကားပြောနေသူများစာပေ":1,"စစ်သည်တော်စာပေ":2,"စန်းရောင်ရှိန်စာပေ":2,"စာနဒီစာပေ":4,"စာနဒီစာအုပ်":1,"စာနဒီစာအုပ်တိုက်":4,"စာပေဗိမာန်":66,"စာပေလောက စာအုပ်တိုက်":3,"စာပေလောကစာအုပ်တိုက်":1,"စာပေသစ်စာပေ":1,"စာရိပ်မြိုင်စာပေ":1,"စာအုပ်စျေး စာအုပ်တိုက်":1,"စာအုပ်စျေးစာအုပ်တိုက်":3,"စာအုပ်ဈေးစာအုပ်တိုက်":5,"စာ‌ပေခရီးသွားများစာအုပ်တိုက်":3,"...":"332 items not stringified"}
-[01:00:06.741] Server  LOG      ✓ Compiled in 355ms
-[01:00:06.955] Browser ERROR   uncaughtError: ReferenceError: Cannot access 'top7Publisher' before initialization
-[01:00:14.227] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[01:00:14.249] Server  LOG      ✓ Compiled in 121ms
-[01:00:14.361] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766248634584}
-[01:00:17.388] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:00:17.388] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[01:00:17.388] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766248637594}
-[01:00:22.606] Browser LOG     Publisher Counts [{"count":254,"name":"စိတ်ကူးချိုချိုစာပေ"},{"count":66,"name":"ကြီးပွားရေးစာအုပ်တိုက်"},{"count":66,"name":"စာပေဗိမာန်"},{"count":61,"name":"ပြန်ကြားရေးဝန်ကြီးဌာန"},{"count":48,"name":"နှစ်ကာလများစာပေ"},{"count":33,"name":"အမျိုးသားညီလာခံကျင်းပရေးလုပ်ငန်းကော်မတီ"},{"count":27,"name":"တိုးမြစ်စာအုပ်တိုက်"}]
-[01:00:22.606] Browser LOG     [2;38;2;124;124;124m%s[0m Publisher Counts [{"count":254,"name":"စိတ်ကူးချိုချိုစာပေ"},{"count":66,"name":"ကြီးပွားရေးစာအုပ်တိုက်"},{"count":66,"name":"စာပေဗိမာန်"},{"count":61,"name":"ပြန်ကြားရေးဝန်ကြီးဌာန"},{"count":48,"name":"နှစ်ကာလများစာပေ"},{"count":33,"name":"အမျိုးသားညီလာခံကျင်းပရေးလုပ်ငန်းကော်မတီ"},{"count":27,"name":"တိုးမြစ်စာအုပ်တိုက်"}]
-[01:00:41.886] Server  LOG      ✓ Compiled in 296ms
-[01:01:40.331] Server  LOG      ✓ Compiled in 102ms
-[01:01:53.363] Server  LOG      ✓ Compiled in 130ms
-[01:02:00.276] Server  LOG      ✓ Compiled in 122ms
-[01:02:08.917] Server  LOG      ✓ Compiled in 324ms
-[01:02:17.295] Server  LOG      ✓ Compiled in 146ms
-[01:02:25.321] Server  LOG      ✓ Compiled in 79ms
-[01:02:33.339] Server  LOG      ✓ Compiled in 86ms
-[01:02:38.284] Server  LOG      ✓ Compiled in 96ms
-[01:04:15.994] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/analytics" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <head>
-                          <body
-                            className="font-manrope antialiased bg-background text-foreground"
--                           cz-shortcut-listen="true"
-                          >
-                  ...
-
-[01:04:15.994] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:04:15.994] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
-[01:04:15.994] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766248876237}
-[01:04:21.046] Browser WARN    SerializableStateInvariantMiddleware took 41ms, which is more than the warning threshold of 32ms. 
-If your state or actions are very large, you may want to disable the middleware as it might cause too much of a slowdown in development mode. See https://redux-toolkit.js.org/api/getDefaultMiddleware for instructions.
-It is disabled in production builds, so you don't need to worry about that.
-[01:05:25.533] Server  LOG      ✓ Compiled in 366ms
-[01:05:38.899] Server  LOG      ✓ Compiled in 87ms
-[01:05:45.131] Server  LOG      ✓ Compiled in 85ms
-[01:05:51.156] Server  LOG      ✓ Compiled in 87ms
-[01:06:51.978] Server  LOG      ✓ Compiled in 234ms
-[01:07:01.203] Server  LOG      ✓ Compiled in 141ms
-[01:07:05.781] Server  LOG      ✓ Compiled in 117ms
-[01:07:18.087] Server  LOG      ✓ Compiled in 138ms
-[01:07:31.349] Server  LOG      ✓ Compiled in 105ms
-[01:07:42.115] Server  LOG      ✓ Compiled in 109ms
-[01:07:55.314] Server  LOG      ✓ Compiled in 166ms
-[01:08:03.420] Server  LOG      ✓ Compiled in 92ms
-[01:08:08.796] Server  LOG      ✓ Compiled in 95ms
+[00:00:12.614] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:12.614] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[00:00:12.614] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250300415}
+[00:00:24.400] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:24.400] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[00:00:24.400] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250312201}
+[00:00:32.594] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250320395}
+[00:00:36.531] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:36.531] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/books","route":"/books"}
+[00:00:36.531] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250324332}
+[00:00:44.316] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250332114}
+[00:01:01.394] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250349195}
+[00:01:04.891] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250352671}
+[00:01:12.228] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250360027}
+[00:01:24.891] Server  LOG      ✓ Compiled in 169ms
+[00:01:37.038] Server  LOG      ✓ Compiled in 82ms
+[00:01:42.577] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250390301}
+[00:01:47.230] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250394935}
+[00:01:50.098] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250397841}
+[00:02:23.984] Server  LOG      ✓ Compiled in 71ms
+[00:02:30.422] Server  LOG      ✓ Compiled in 121ms
+[00:02:32.461] Server  LOG      ✓ Compiled in 47ms
+[00:02:40.005] Server  LOG      ✓ Compiled in 129ms
+[00:02:45.621] Server  LOG      ✓ Compiled in 73ms
+[00:03:16.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250484708}
+[00:03:18.269] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250485986}
+[00:03:19.935] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/my-books color: rgb(120, 120, 120) color: inherit {"dp":"/my-books","o":"http://localhost:3000/my-books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250487732}
+[00:03:40.448] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/auth/login color: rgb(120, 120, 120) color: inherit {"dp":"/auth/login","o":"http://localhost:3000/auth/login","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250508245}
+[00:03:50.767] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250518566}
+[00:03:53.696] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/admin color: rgb(120, 120, 120) color: inherit {"dp":"/admin","o":"http://localhost:3000/admin","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250521494}
+[00:04:03.226] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250530956}
+[00:04:08.034] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/books color: rgb(120, 120, 120) color: inherit {"dp":"/books","o":"http://localhost:3000/books","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250535747}
+[00:04:09.274] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/authors color: rgb(120, 120, 120) color: inherit {"dp":"/authors","o":"http://localhost:3000/authors","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766250537060}
