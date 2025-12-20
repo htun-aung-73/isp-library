@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/macbookair/Documents/web/library-management-system/app/books/loading.tsx"],"sourcesContent":["import { Skeleton } from \"@/components/ui/skeleton\"\n\nexport default function BooksLoading() {\n  return (\n    // <div className=\"container mx-auto px-4 py-8\">\n    //   <div className=\"mb-8\">\n    //     <Skeleton className=\"h-10 w-48 mb-2\" />\n    //     <Skeleton className=\"h-5 w-96\" />\n    //   </div>\n\n    //   <div className=\"mt-8\">\n    //     <Skeleton className=\"h-[600px] w-full rounded-lg\" />\n    //   </div>\n    // </div>\n    <div>loading...</div>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAEe,SAAS;IACtB,OACE,gDAAgD;IAChD,2BAA2B;IAC3B,8CAA8C;IAC9C,wCAAwC;IACxC,WAAW;IAEX,2BAA2B;IAC3B,2DAA2D;IAC3D,WAAW;IACX,SAAS;kBACT,8WAAC;kBAAI;;;;;;AAET"}}]
-}

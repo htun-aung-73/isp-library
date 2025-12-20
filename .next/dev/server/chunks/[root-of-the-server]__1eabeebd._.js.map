@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///Users/macbookair/Documents/web/library-management-system/app/api/test-env/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\"\n\nexport async function GET() {\n    const token = process.env.NEXT_PUBLIC_BASEROW_API_TOKEN\n    const tableBooks = process.env.NEXT_PUBLIC_BASEROW_TABLE_BOOKS\n\n    return NextResponse.json({\n        tokenDefined: !!token,\n        tokenLength: token?.length || 0,\n        tableBooksDefined: !!tableBooks,\n        envKeys: Object.keys(process.env).filter(k => k.startsWith(\"NEXT_PUBLIC_BASEROW\"))\n    })\n}\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe;IAClB,MAAM;IACN,MAAM;IAEN,OAAO,gRAAY,CAAC,IAAI,CAAC;QACrB,cAAc,CAAC,CAAC;QAChB,aAAa,OAAO,UAAU;QAC9B,mBAAmB,CAAC,CAAC;QACrB,SAAS,OAAO,IAAI,CAAC,QAAQ,GAAG,EAAE,MAAM,CAAC,CAAA,IAAK,EAAE,UAAU,CAAC;IAC/D;AACJ"}}]
-}

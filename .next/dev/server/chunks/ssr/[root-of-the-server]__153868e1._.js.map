@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///Users/macbookair/Documents/web/library-management-system/app/admin-dashboard/page.tsx"],"sourcesContent":["export default function AdminDashboardPage() {\n    return (\n        <div>This is Admin DashBoard</div>\n    )\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACpB,qBACI,8WAAC;kBAAI;;;;;;AAEb"}}]
-}
