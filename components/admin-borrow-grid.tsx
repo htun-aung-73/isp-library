@@ -1,108 +1,104 @@
 "use client"
 
-import { useMemo, useState, useCallback } from "react"
+import { useMemo, useState, useCallback, useRef } from "react"
 import { AgGridReact } from "ag-grid-react"
 import { AllCommunityModule, ModuleRegistry, themeQuartz } from "ag-grid-community"
-import type { ColDef } from "ag-grid-community"
+import type { ColDef, GridReadyEvent } from "ag-grid-community"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Search, Download } from "lucide-react"
+import { Search, Download, CheckCircle2, Clock, AlertCircle } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { BorrowedBook } from "@/lib/baserow/types"
 
 ModuleRegistry.registerModules([AllCommunityModule])
 
-interface BorrowRecord {
-  id: string
-  user_id: string
-  book_id: string
-  status: string
-  borrowed_at: string
-  due_date: string
-  returned_at: string | null
-  book: {
-    id: string
-    title: string
-    isbn: string
-    genre: string
-    cover_image: string | null
-    author: { name: string } | null
-  } | null
-  user_profile: {
-    email: string
-    full_name: string | null
-  } | null
-}
-
 interface AdminBorrowGridProps {
-  borrowedBooks: BorrowRecord[]
+  borrowedBooks: BorrowedBook[]
 }
 
 export function AdminBorrowGrid({ borrowedBooks }: AdminBorrowGridProps) {
   const [quickFilterText, setQuickFilterText] = useState("")
-  const [gridApi, setGridApi] = useState<any>(null)
+  const gridRef = useRef<any>(null)
 
   const columnDefs = useMemo<ColDef[]>(
     () => [
       {
         headerName: "User",
-        field: "user_profile",
-        valueGetter: (params: any) => {
-          const profile = params.data?.user_profile
-          return profile?.full_name || profile?.email || "Unknown"
-        },
+        field: "username",
         filter: "agTextColumnFilter",
         flex: 1.5,
         minWidth: 150,
       },
       {
         headerName: "Email",
-        field: "user_profile.email",
-        valueGetter: (params: any) => params.data?.user_profile?.email || "N/A",
+        field: "email",
+        valueGetter: (params: any) => params.data?.email || "N/A",
         filter: "agTextColumnFilter",
         flex: 1.5,
         minWidth: 180,
       },
       {
         headerName: "Book Title",
-        field: "book.title",
-        valueGetter: (params: any) => params.data?.book?.title || "Unknown",
+        field: "title",
         filter: "agTextColumnFilter",
         flex: 2,
         minWidth: 200,
       },
       {
         headerName: "Author",
-        field: "book.author",
-        valueGetter: (params: any) => params.data?.book?.author?.name || "Unknown",
+        field: "author_name",
         filter: "agTextColumnFilter",
         flex: 1.5,
         minWidth: 150,
       },
       {
-        headerName: "Genre",
-        field: "book.genre",
-        valueGetter: (params: any) => params.data?.book?.genre || "N/A",
+        headerName: "Publisher",
+        field: "publisher_name",
         filter: "agTextColumnFilter",
-        flex: 1,
-        minWidth: 100,
+        flex: 1.5,
+        minWidth: 150,
       },
       {
         headerName: "Status",
         field: "status",
         filter: "agTextColumnFilter",
         flex: 1,
-        minWidth: 100,
+        minWidth: 120,
         cellRenderer: (params: any) => {
           const status = params.value
           if (status === "borrowed") {
             const dueDate = new Date(params.data?.due_date)
             const isOverdue = dueDate < new Date()
-            return `<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-              isOverdue
-                ? "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200"
-                : "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200"
-            }">${isOverdue ? "Overdue" : "Borrowed"}</span>`
+
+            if (isOverdue) {
+              return (
+                <div className="flex items-center h-full">
+                  <Badge variant="destructive" className="gap-1 px-2 py-0.5 font-semibold animate-pulse">
+                    <AlertCircle className="h-3 w-3" />
+                    Overdue
+                  </Badge>
+                </div>
+              )
+            }
+
+            return (
+              <div className="flex items-center h-full">
+                <Badge variant="secondary" className="gap-1 px-2 py-0.5 font-semibold bg-amber-100 text-amber-700 border-amber-200 hover:bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-800">
+                  <Clock className="h-3 w-3" />
+                  Borrowed
+                </Badge>
+              </div>
+            )
           }
-          return `<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200">Returned</span>`
+
+          return (
+            <div className="flex items-center h-full">
+              <Badge variant="outline" className="gap-1 px-2 py-0.5 font-semibold bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-50 dark:bg-emerald-900/20 dark:text-emerald-400 dark:border-emerald-800">
+                <CheckCircle2 className="h-3 w-3" />
+                Returned
+              </Badge>
+            </div>
+          )
         },
       },
       {
@@ -110,7 +106,7 @@ export function AdminBorrowGrid({ borrowedBooks }: AdminBorrowGridProps) {
         field: "borrowed_at",
         filter: "agDateColumnFilter",
         flex: 1,
-        minWidth: 120,
+        minWidth: 150,
         valueFormatter: (params: any) => {
           if (!params.value) return "N/A"
           return new Date(params.value).toLocaleDateString()
@@ -135,7 +131,7 @@ export function AdminBorrowGrid({ borrowedBooks }: AdminBorrowGridProps) {
         flex: 1,
         minWidth: 120,
         valueFormatter: (params: any) => {
-          if (!params.value) return "-"
+          if (!params.value || params.value === "null") return "-"
           return new Date(params.value).toLocaleDateString()
         },
       },
@@ -147,21 +143,22 @@ export function AdminBorrowGrid({ borrowedBooks }: AdminBorrowGridProps) {
     () => ({
       sortable: true,
       resizable: true,
+      filterParams: {
+        buttons: ["reset", "apply"],
+      },
     }),
     [],
   )
 
-  const onGridReady = useCallback((params: any) => {
-    setGridApi(params.api)
+  const onGridReady = useCallback((params: GridReadyEvent) => {
+    params.api.sizeColumnsToFit()
   }, [])
 
   const exportToCsv = useCallback(() => {
-    if (gridApi) {
-      gridApi.exportDataAsCsv({
-        fileName: `borrow-records-${new Date().toISOString().split("T")[0]}.csv`,
-      })
-    }
-  }, [gridApi])
+    gridRef.current?.api.exportDataAsCsv({
+      fileName: "library-books.csv",
+    })
+  }, [])
 
   const customTheme = themeQuartz.withParams({
     backgroundColor: "var(--card)",
@@ -198,17 +195,17 @@ export function AdminBorrowGrid({ borrowedBooks }: AdminBorrowGridProps) {
 
       <div className="h-150 w-full">
         <AgGridReact
+          ref={gridRef}
           theme={customTheme}
           rowData={borrowedBooks}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           quickFilterText={quickFilterText}
           pagination={true}
-          paginationPageSize={20}
-          paginationPageSizeSelector={[10, 20, 50, 100]}
+          paginationPageSize={50}
+          paginationPageSizeSelector={[50, 100, 200, 500]}
           onGridReady={onGridReady}
           animateRows={true}
-          rowSelection="multiple"
         />
       </div>
     </div>

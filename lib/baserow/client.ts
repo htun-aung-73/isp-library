@@ -155,12 +155,23 @@ export async function getUserByEmail(email: string): Promise<BaserowUser | null>
  */
 export async function getUserById(id: string): Promise<BaserowUser | null> {
     try {
-        const user = await baserowFetch<BaserowUser>(
+        const { results } = await baserowFetch<BaserowListResponse<BaserowUser>>(
             `${BASEROW_API_URL}/api/database/rows/table/${TABLE_USERS}/${id}/?user_field_names=true`
         )
-        return user
+        return results[0] || null
     } catch {
         return null
+    }
+}
+
+export async function getAllBorrowRecords(): Promise<BorrowedBook[]> {
+    try {
+        const results = await baserowFetchAll<BaserowBorrowedBook>(
+            `${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true`
+        )
+        return results.map(mapBaserowBorrowedBook)
+    } catch {
+        return []
     }
 }
 

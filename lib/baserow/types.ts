@@ -103,6 +103,7 @@ export interface BaserowBorrowedBook {
     book_title?: LinkData[] | null
     user_id?: LinkData[] | null
     username?: LinkData[] | null
+    user_email?: LinkData[] | null
     author_id: LinkData[] | null
     author_name: LinkData[] | null
     publisher_id?: LinkData[] | null
@@ -170,6 +171,7 @@ export interface BorrowedBook {
     title: string | null
     user_id: string | null
     username: string | null
+    email: string | null
     author_id: string | null
     author_name: string | null
     publisher_id?: string | null
@@ -209,15 +211,11 @@ export function mapBaserowAuthorToAuthor(author: BaserowAuthor): Author {
 }
 
 export function mapBaserowBookToBook(book: BaserowBook): Book {
-    const authorName = Array.isArray(book.author_name) && book.author_name.length > 0
-        ? book.author_name[0].value
-        : (typeof book.author_name === 'string' ? book.author_name : null);
-
     return {
         id: book.id,
         book_id: book.book_id ?? null,
         title: book.title,
-        author_name: authorName ?? null,
+        author_name: mapLinkData(book.author_name),
         author_id: mapLinkData(book.author),
         language: book.language ?? null,
         publisher_name: mapLinkData(book.publisher_name),
@@ -253,6 +251,7 @@ export function mapBaserowBorrowedBook(borrowed: BaserowBorrowedBook): BorrowedB
         title: mapLinkData(borrowed.book_title),
         user_id: mapLinkData(borrowed.user_id),
         username: mapLinkData(borrowed.username),
+        email: mapLinkData(borrowed.user_email),
         author_id: mapLinkData(borrowed.author_id),
         author_name: mapLinkData(borrowed.author_name),
         publisher_id: mapLinkData(borrowed.publisher_id),

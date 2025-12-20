@@ -93,7 +93,7 @@ export function AuthorsList() {
                             </CardHeader>
                             <CardContent>
                                 <div className="flex items-center justify-between pt-4 border-t border-border/40">
-                                    <span className="text-xs font-bold text-primary/40 uppercase tracking-widest">View Profile</span>
+                                    <span className="text-xs font-bold text-black/80 uppercase tracking-widest">View Profile</span>
                                     <div className="p-2 rounded-full bg-primary/5 group-hover:bg-secondary group-hover:text-white transition-all">
                                         <ArrowRight className="h-4 w-4 transition-transform" />
                                     </div>

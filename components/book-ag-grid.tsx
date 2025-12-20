@@ -216,7 +216,6 @@ export function BookAgGrid() {
           paginationPageSize={100}
           paginationPageSizeSelector={[50, 100, 200, 500]}
           animateRows={true}
-          rowSelection="multiple"
           domLayout="normal"
           enableCellTextSelection={true}
           rowHeight={48}

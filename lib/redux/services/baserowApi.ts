@@ -11,7 +11,6 @@ import {
 } from "../../baserow/types"
 import { setCredentials, logout } from "../slices/authSlice"
 
-// Define a service using a base URL and expected endpoints
 export const baserowApi = createApi({
     reducerPath: "baserowApi",
     baseQuery: fetchBaseQuery({ baseUrl: "/" }),
@@ -114,6 +113,20 @@ export const baserowApi = createApi({
                     ]
                     : [{ type: "BorrowedBook", id: "LIST" }],
         }),
+        getAllBorrowRecords: builder.query<BorrowedBook[], void>({
+            queryFn: async () => {
+                const { getAllBorrowRecords } = await import("../../baserow/client")
+                const data = await getAllBorrowRecords()
+                return { data }
+            },
+            providesTags: (result) =>
+                result
+                    ? [
+                        ...result.map(({ id }) => ({ type: "BorrowedBook" as const, id })),
+                        { type: "BorrowedBook", id: "LIST" },
+                    ]
+                    : [{ type: "BorrowedBook", id: "LIST" }],
+        }),
         getAllBooksByStatus: builder.query<BorrowedBook[], string>({
             queryFn: async (status) => {
                 const { getAllBooksByStatus } = await import("../../baserow/client")
@@ -196,6 +209,7 @@ export const {
     useGetBorrowedBooksByUserIdQuery,
     useCheckBookBorrowedQuery,
     useGetAllBooksByStatusQuery,
+    useGetAllBorrowRecordsQuery,
     useLoginMutation,
     useLogoutMutation,
     useSignUpMutation,

@@ -84,7 +84,7 @@ export function AuthorBooks({ authorId }: AuthorBooksProps) {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-12">
                 {books?.map((book) => (
-                    <Card key={book.id} className="group overflow-hidden flex flex-row h-full hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md border-border/40">
+                    <Card key={book.id} className="group overflow-hidden flex flex-row h-full transition-all duration-300 shadow-xs hover:shadow-sm border-border/40">
                         {/* Visual sidebar */}
                         <div className="w-2 bg-primary/20 group-hover:bg-secondary transition-colors shrink-0" />
 
