@@ -109,6 +109,34 @@ export async function getAuthors(): Promise<BaserowAuthor[]> {
 }
 
 /**
+ * Get author by ID
+ */
+export async function getAuthorById(id: string): Promise<BaserowAuthor | null> {
+    try {
+        const { results } = await baserowFetch<BaserowListResponse<BaserowAuthor>>(
+            `${BASEROW_API_URL}/api/database/rows/table/${TABLE_AUTHORS}/?user_field_names=true&filter__author_id__equal=${id}`
+        )
+        return results[0]
+    } catch {
+        return null
+    }
+}
+
+/**
+ * Get books by author ID
+ */
+export async function getBooksByAuthorId(authorId: string): Promise<Book[]> {
+    try {
+        const response = await baserowFetch<BaserowListResponse<BaserowBook>>(
+            `${BASEROW_API_URL}/api/database/rows/table/${TABLE_BOOKS}/?user_field_names=true&filter__author__link_row_contains=${authorId}`
+        )
+        return response.results.map(mapBaserowBookToBook)
+    } catch {
+        return []
+    }
+}
+
+/**
  * Get user by email (for login)
  */
 export async function getUserByEmail(email: string): Promise<BaserowUser | null> {

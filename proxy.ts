@@ -6,7 +6,7 @@ export async function proxy(request: NextRequest) {
     const sessionCookie = request.cookies.get(SESSION_COOKIE_NAME)
 
     // Protect routes that require authentication
-    const protectedPaths = ["/my-books", "/books", "/analytics"]
+    const protectedPaths = ["/my-books", "/books", "/analytics", "/authors"]
     const adminPaths = ["/admin"]
     const isProtectedPath = protectedPaths.some((path) => request.nextUrl.pathname.startsWith(path))
     const isAdminPath = adminPaths.some((path) => request.nextUrl.pathname.startsWith(path))
@@ -24,7 +24,7 @@ export async function proxy(request: NextRequest) {
             const session = JSON.parse(sessionCookie.value)
             if (!session.isAdmin) {
                 const url = request.nextUrl.clone()
-                url.pathname = "/admin"
+                url.pathname = "/"
                 return NextResponse.redirect(url)
             }
         } catch {

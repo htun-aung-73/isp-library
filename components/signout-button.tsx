@@ -11,14 +11,14 @@ export function SignOutButton() {
   const [logout] = useLogoutMutation()
 
   const handleSignOut = async () => {
+    router.push("/auth/login")
+    router.refresh()
     await logout();
     toast.success("Sign out successful!", {
       classNames: {
         icon: 'text-red-500',
       }
     })
-    router.push("/auth/login")
-    router.refresh()
   }
 
   return (

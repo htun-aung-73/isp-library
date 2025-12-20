@@ -36,7 +36,8 @@ export interface BaserowAuthor {
     order: string,
     author_id: string | null,
     name: string,
-    books: LinkData[]
+    books: LinkData[],
+    borrow_books: LinkData[]
 }
 
 /**
@@ -132,7 +133,8 @@ export interface Author {
     id: string
     author_id: string | null
     name: string
-    books: LinkData[]
+    books?: LinkData[],
+    borrow_books?: LinkData[]
 }
 
 export interface Publisher {
@@ -201,7 +203,6 @@ export function mapBaserowAuthorToAuthor(author: BaserowAuthor): Author {
         id: author.id,
         author_id: author.author_id,
         name: author.name,
-        books: author.books,
     }
 }
 

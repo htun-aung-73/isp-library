@@ -37,6 +37,21 @@ export const baserowApi = createApi({
             transformResponse: (response: BaserowAuthor[]) =>
                 response.map(mapBaserowAuthorToAuthor),
         }),
+        getAuthorById: builder.query<Author, string>({
+            query: (id) => `api/authors/${id}`,
+            transformResponse: (response: ApiReturnResponse<Author>) => response.data,
+        }),
+        getBooksByAuthorId: builder.query<Book[], string>({
+            query: (id) => `api/authors/${id}/books`,
+            providesTags: (result) =>
+                result
+                    ? [
+                        ...result.map(({ id }) => ({ type: "Book" as const, id })),
+                        { type: "Book", id: "AUTHOR_LIST" },
+                    ]
+                    : [{ type: "Book", id: "AUTHOR_LIST" }],
+        }),
+
 
         // Borrowing
         borrowBook: builder.mutation<ApiReturnResponse<BorrowedBook>, { bookId: string; userId: string; dueDate: string }>({
@@ -184,4 +199,7 @@ export const {
     useLoginMutation,
     useLogoutMutation,
     useSignUpMutation,
+    useGetAuthorByIdQuery,
+    useGetBooksByAuthorIdQuery,
 } = baserowApi
+

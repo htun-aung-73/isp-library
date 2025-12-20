@@ -6,7 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { BookOpen, Calendar, User, ArrowLeft, CheckCircle, AlertCircle, Ban } from "lucide-react"
+import { BookOpen, Calendar, User, ArrowLeft, CheckCircle, AlertCircle, Ban, Globe, MapPinCheckInside, BookIcon } from "lucide-react"
 import { useAppSelector } from "@/lib/redux/hooks"
 import { selectIsAuthenticated } from "@/lib/redux/slices/authSlice"
 import { useBorrowBookMutation } from "@/lib/redux/services/baserowApi"
@@ -183,6 +183,30 @@ export function BookDetails({
                 {book?.published_year}
               </Badge>
             )}
+            {
+              book?.language && (
+                <Badge variant="outline" className="text-sm p-2">
+                  <Globe className="h-4 w-4 mr-1.5" />
+                  {book?.language}
+                </Badge>
+              )
+            }
+            {
+              book?.publisher_name && (
+                <Badge variant="outline" className="text-sm p-2">
+                  <BookIcon className="h-4 w-4 mr-1.5" />
+                  {book?.publisher_name}
+                </Badge>
+              )
+            }
+            {
+              book?.place_of_publication && (
+                <Badge variant="outline" className="text-sm p-2">
+                  <MapPinCheckInside className="h-4 w-4 mr-1.5" />
+                  {book?.place_of_publication}
+                </Badge>
+              )
+            }
           </div>
 
           {isAuthenticated && (

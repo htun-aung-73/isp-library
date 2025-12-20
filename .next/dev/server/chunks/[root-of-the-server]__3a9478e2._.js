@@ -59,7 +59,8 @@ async function proxy(request) {
     const protectedPaths = [
         "/my-books",
         "/books",
-        "/analytics"
+        "/analytics",
+        "/authors"
     ];
     const adminPaths = [
         "/admin"
@@ -78,7 +79,7 @@ async function proxy(request) {
             const session = JSON.parse(sessionCookie.value);
             if (!session.isAdmin) {
                 const url = request.nextUrl.clone();
-                url.pathname = "/admin";
+                url.pathname = "/";
                 return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$10_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$server$2e$js__$5b$middleware$5d$__$28$ecmascript$29$__["NextResponse"].redirect(url);
             }
         } catch  {
