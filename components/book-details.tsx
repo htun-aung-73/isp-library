@@ -11,15 +11,16 @@ import { useAppSelector } from "@/lib/redux/hooks"
 import { selectIsAuthenticated } from "@/lib/redux/slices/authSlice"
 import { useBorrowBookMutation } from "@/lib/redux/services/baserowApi"
 import { Book, BorrowedBook, SessionUser } from "@/lib/baserow/types"
+import { toast } from "sonner"
 
 export function BookDetails({
   book,
   borrowedBook,
   hasBorrowed,
   currentBorrowedByUser,
-  isBookBorrowed,
+  checkBookBorrowed,
   user
-}: { book: Book | undefined, borrowedBook?: BorrowedBook, hasBorrowed: boolean, currentBorrowedByUser: number, isBookBorrowed: boolean, user: SessionUser | null }) {
+}: { book: Book | undefined, borrowedBook: BorrowedBook | null, hasBorrowed: boolean, currentBorrowedByUser: number, checkBookBorrowed?: BorrowedBook | null, user: SessionUser | null }) {
 
   const router = useRouter()
 
@@ -28,6 +29,7 @@ export function BookDetails({
   const [borrowBook, { isLoading: isBorrowing }] = useBorrowBookMutation()
 
   const maxBorrowsPerPeriod = +process.env.MAX_BORROWS_PER_PERIOD! || 2
+  const isBookBorrowed = !!checkBookBorrowed
 
   const [message, setMessage] = useState<{
     type: "success" | "error"
@@ -74,12 +76,18 @@ export function BookDetails({
         userId: user.user_id,
         dueDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString()
       }).unwrap()
-      setMessage({ type: "success", text: "Book borrowed successfully!" })
-      setTimeout(() => {
-        document.querySelector(".message")?.classList.add("hidden");
-      }, 2000)
+
+      toast.success("Book borrowed successfully", {
+        classNames: {
+          icon: 'text-green-500',
+        }
+      })
     } catch (err) {
-      setMessage({ type: "error", text: "Failed to borrow book. Please try again." })
+      toast.error("Failed to borrow book. Please try again.", {
+        classNames: {
+          icon: 'text-red-500',
+        }
+      })
     }
   }
 
@@ -214,7 +222,7 @@ export function BookDetails({
                   }
 
                   {
-                    (isBookBorrowed && borrowedBook?.user_id !== user?.user_id) && <p className="text-sm text-muted-foreground">
+                    (isBookBorrowed && checkBookBorrowed?.user_id !== user?.user_id) && <p className="text-sm text-muted-foreground">
                       This book is currently borrowed by other user.
                     </p>
                   }

@@ -26,6 +26,8 @@ export async function POST(request: Request) {
         const borrowRecord = await createBorrowRecord({
             bookId: String(bookId),
             userId: String(userId),
+            authorId: String(book.author_id),
+            publisherId: String(book.publisher_id),
             dueDate: dueDate,
         })
 
@@ -36,7 +38,7 @@ export async function POST(request: Request) {
             )
         }
 
-        return NextResponse.json({ success: true, borrowRecord })
+        return NextResponse.json({ success: true, data: borrowRecord })
     } catch (error) {
         console.error("Borrow API error:", error)
         return NextResponse.json(

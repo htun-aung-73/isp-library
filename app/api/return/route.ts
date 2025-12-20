@@ -1,21 +1,21 @@
 import { NextResponse } from "next/server"
-import { updateBorrowRecord, updateBookCopies } from "@/lib/baserow/client"
+import { updateBorrowRecord } from "@/lib/baserow/client"
 
-export async function POST(request: Request) {
+export async function PATCH(request: Request) {
     try {
-        const { borrowId, bookId, availableCopies } = await request.json()
+        const { borrowId } = await request.json()
 
-        if (!borrowId || !bookId) {
+        if (!borrowId) {
             return NextResponse.json(
-                { success: false, error: "Borrow ID and Book ID are required" },
+                { success: false, error: "Borrow ID is required" },
                 { status: 400 }
             )
         }
 
         // Update borrow record to returned
         const borrowRecord = await updateBorrowRecord(String(borrowId), {
-            Status: "returned",
-            Returned_At: new Date().toISOString(),
+            status: "returned",
+            returned_at: new Date().toISOString(),
         })
 
         if (!borrowRecord) {
@@ -25,10 +25,7 @@ export async function POST(request: Request) {
             )
         }
 
-        // Update available copies
-        await updateBookCopies(String(bookId), availableCopies + 1)
-
-        return NextResponse.json({ success: true })
+        return NextResponse.json({ success: true, data: borrowRecord })
     } catch (error) {
         console.error("Return API error:", error)
         return NextResponse.json(

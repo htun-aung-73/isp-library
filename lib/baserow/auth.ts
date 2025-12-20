@@ -41,6 +41,8 @@ export async function login(
             email: user.email,
             username: user.username,
             isAdmin: user.is_admin || false,
+            created_at: user.created_at,
+            updated_at: user.updated_at,
         }
         return { success: true, user: sessionUser }
     } catch (error) {
@@ -121,6 +123,8 @@ export async function refreshSession(): Promise<SessionUser | null> {
         email: user.email,
         username: user.username,
         isAdmin: user.is_admin,
+        created_at: user.created_at,
+        updated_at: user.updated_at,
     }
 
     await setSession(updatedSession)

@@ -2,12 +2,18 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { SessionUser } from "../../baserow/types"
 
 interface AuthState {
-    user: SessionUser | null
+    user: SessionUser
     isAuthenticated: boolean
 }
 
 const initialState: AuthState = {
-    user: null,
+    user: {
+        id: "",
+        user_id: "",
+        email: "",
+        username: "",
+        isAdmin: false,
+    },
     isAuthenticated: false,
 }
 
@@ -23,7 +29,13 @@ const authSlice = createSlice({
             state.isAuthenticated = true
         },
         logout: (state) => {
-            state.user = null
+            state.user = {
+                id: "",
+                user_id: "",
+                email: "",
+                username: "",
+                isAdmin: false,
+            }
             state.isAuthenticated = false
         },
     },

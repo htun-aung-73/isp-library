@@ -12,7 +12,7 @@ export function SignOutButton() {
 
   const handleSignOut = async () => {
     await logout();
-    toast.success("Logout successful!", {
+    toast.success("Sign out successful!", {
       classNames: {
         icon: 'text-red-500',
       }

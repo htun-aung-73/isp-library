@@ -161,14 +161,14 @@ export async function getAllBooksByStatus(status: string): Promise<BorrowedBook[
     }
 }
 
-export async function isBookBorrowed(bookId: string): Promise<boolean> {
+export async function checkBookBorrowedByUser(bookId: string): Promise<BorrowedBook | null> {
     try {
         const response = await baserowFetch<BaserowListResponse<BaserowBorrowedBook>>(
             `${BASEROW_API_URL}/api/database/rows/table/${TABLE_BORROW_BOOKS}/?user_field_names=true&filter__book_id__link_row_contains=${bookId}&filter__status__equal=borrowed`
         )
-        return response.results.length > 0
+        return response.results.length > 0 ? mapBaserowBorrowedBook(response.results[0]) : null
     } catch {
-        return false
+        return null
     }
 }
 
@@ -178,6 +178,8 @@ export async function isBookBorrowed(bookId: string): Promise<boolean> {
 export async function createBorrowRecord(data: {
     bookId: string
     userId: string
+    authorId: string
+    publisherId: string
     dueDate: string
 }): Promise<BorrowedBook | null> {
     try {
@@ -188,6 +190,8 @@ export async function createBorrowRecord(data: {
                 body: JSON.stringify({
                     book_id: data.bookId,
                     user_id: data.userId,
+                    author_id: data.authorId,
+                    publisher_id: data.publisherId,
                     borrowed_at: new Date().toISOString(),
                     due_date: data.dueDate,
                     status: "borrowed",

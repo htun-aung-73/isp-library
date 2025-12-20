@@ -56,7 +56,7 @@ export default async function RootLayout({
           <Header />
           <main>{children}</main>
           <Analytics />
-          <Toaster position="top-center" />
+          <Toaster position="top-right" />
         </ReduxProvider>
       </body>
     </html>

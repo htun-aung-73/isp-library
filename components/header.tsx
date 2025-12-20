@@ -33,7 +33,7 @@ export function Header() {
             <BarChart3 className="h-4 w-4" />
             Analytics
           </Link>
-          {user && !isAdmin && (
+          {user.user_id && !isAdmin && (
             <Link
               href="/my-books"
               className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -54,7 +54,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {user ? (
+          {user.user_id ? (
             <SignOutButton />
           ) : (
             <>

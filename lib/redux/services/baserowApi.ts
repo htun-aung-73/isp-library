@@ -7,6 +7,7 @@ import {
     BaserowAuthor,
     mapBaserowAuthorToAuthor,
     ApiResponse,
+    ApiReturnResponse,
 } from "../../baserow/types"
 import { setCredentials, logout } from "../slices/authSlice"
 
@@ -38,7 +39,7 @@ export const baserowApi = createApi({
         }),
 
         // Borrowing
-        borrowBook: builder.mutation<BorrowedBook, { bookId: string; userId: string; dueDate: string }>({
+        borrowBook: builder.mutation<ApiReturnResponse<BorrowedBook>, { bookId: string; userId: string; dueDate: string }>({
             query: (body) => ({
                 url: "api/borrow",
                 method: "POST",
@@ -49,16 +50,40 @@ export const baserowApi = createApi({
                 { type: "BorrowedBook", id: "LIST" }, // Invalidate user's borrowed list
             ],
         }),
-        returnBook: builder.mutation<void, { borrowId: string; bookId: string; availableCopies: number }>({
+        returnBook: builder.mutation<ApiReturnResponse<BorrowedBook>, { borrowId: string, userId: string | null }>({
             query: (body) => ({
                 url: "api/return",
-                method: "POST",
+                method: "PATCH",
                 body,
             }),
-            invalidatesTags: (result, error, { bookId }) => [
-                { type: "Book", id: bookId },
-                { type: "BorrowedBook", id: "LIST" },
-            ],
+            // invalidatesTags: (result, error, { borrowId }) => [
+            //     { type: "BorrowedBook", id: borrowId },
+            //     { type: "BorrowedBook", id: "LIST" },
+            // ],
+
+            // Optimistic update
+            async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+                const patchResult = dispatch(
+                    baserowApi.util.updateQueryData(
+                        "getBorrowedBooksByUserId",
+                        arg.userId || "",
+                        (draft) => {
+                            const index = draft.findIndex(
+                                (borrowedBook) => borrowedBook.id === arg.borrowId
+                            )
+                            if (index !== -1) {
+                                draft[index].returned_at = new Date().toISOString()
+                                draft[index].status = "returned"
+                            }
+                        }
+                    )
+                )
+                try {
+                    await queryFulfilled
+                } catch (err) {
+                    patchResult.undo()
+                }
+            },
         }),
         getBorrowedBooksByUserId: builder.query<BorrowedBook[], string>({
             queryFn: async (userId) => {
@@ -66,7 +91,13 @@ export const baserowApi = createApi({
                 const data = await getBorrowedBooksByUserId(userId)
                 return { data }
             },
-            providesTags: [{ type: "BorrowedBook", id: "LIST" }],
+            providesTags: (result) =>
+                result
+                    ? [
+                        ...result.map(({ id }) => ({ type: "BorrowedBook" as const, id })),
+                        { type: "BorrowedBook", id: "LIST" },
+                    ]
+                    : [{ type: "BorrowedBook", id: "LIST" }],
         }),
         getAllBooksByStatus: builder.query<BorrowedBook[], string>({
             queryFn: async (status) => {
@@ -74,12 +105,18 @@ export const baserowApi = createApi({
                 const data = await getAllBooksByStatus(status)
                 return { data }
             },
-            providesTags: [{ type: "BorrowedBook", id: "LIST" }],
+            providesTags: (result) =>
+                result
+                    ? [
+                        ...result.map(({ id }) => ({ type: "BorrowedBook" as const, id })),
+                        { type: "BorrowedBook", id: "LIST" },
+                    ]
+                    : [{ type: "BorrowedBook", id: "LIST" }],
         }),
-        isBookBorrowed: builder.query<boolean, string>({
+        checkBookBorrowed: builder.query<BorrowedBook | null, string>({
             queryFn: async (bookId) => {
-                const { isBookBorrowed } = await import("../../baserow/client")
-                const data = await isBookBorrowed(bookId)
+                const { checkBookBorrowedByUser } = await import("../../baserow/client")
+                const data = await checkBookBorrowedByUser(bookId)
                 return { data }
             },
             providesTags: [{ type: "BorrowedBook", id: "LIST" }],
@@ -142,7 +179,7 @@ export const {
     useBorrowBookMutation,
     useReturnBookMutation,
     useGetBorrowedBooksByUserIdQuery,
-    useIsBookBorrowedQuery,
+    useCheckBookBorrowedQuery,
     useGetAllBooksByStatusQuery,
     useLoginMutation,
     useLogoutMutation,

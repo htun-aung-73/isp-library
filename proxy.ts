@@ -24,7 +24,7 @@ export async function proxy(request: NextRequest) {
             const session = JSON.parse(sessionCookie.value)
             if (!session.isAdmin) {
                 const url = request.nextUrl.clone()
-                url.pathname = "/"
+                url.pathname = "/admin"
                 return NextResponse.redirect(url)
             }
         } catch {
