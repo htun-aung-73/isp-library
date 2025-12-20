@@ -110,7 +110,7 @@ export function AuthorsList() {
                     <h3 className="text-xl font-bold">No authors found</h3>
                     <p className="text-muted-foreground">Try adjusting your search terms</p>
                     <Button
-                        variant="link"
+                        variant="outline"
                         className="mt-2 text-primary"
                         onClick={() => setSearchTerm("")}
                     >
