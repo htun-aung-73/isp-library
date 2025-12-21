@@ -46,6 +46,7 @@ async function baserowFetch<T>(
     })
 
     if (!response.ok) {
+        console.log("url", url, "options", options)
         const error = await response.text()
         throw new Error(`Baserow API error: ${response.status} - ${error}`)
     }
