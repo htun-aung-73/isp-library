@@ -2,7 +2,8 @@
 
 import { useMemo } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Users, Clock, CheckCircle, Loader2 } from "lucide-react"
+import { BookOpen, Users, Clock, CheckCircle, Loader2, ArrowRight } from "lucide-react"
+import Link from "next/link"
 import { AdminBorrowGrid } from "@/components/admin-borrow-grid"
 import { useGetAllBorrowRecordsQuery } from "@/lib/redux/services/baserowApi"
 import { BorrowedBook } from "@/lib/baserow/types"
@@ -109,8 +110,17 @@ export function AdminDashboard() {
                         <Users className="h-4 w-4 text-secondary" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold text-secondary">{stats.uniqueUsers}</div>
-                        <p className="text-xs text-muted-foreground">Unique borrowers</p>
+                        <Link href={`admin/details/users`} title="view details">
+                            <div className="group flex items-center justify-between">
+                                <div>
+                                    <div className="text-2xl font-bold text-secondary">{stats.uniqueUsers}</div>
+                                    <p className="text-xs text-muted-foreground">Unique borrowers</p>
+                                </div>
+                                <div className="p-2 rounded-full bg-primary/5 group-hover:bg-secondary group-hover:text-white transition-all">
+                                    <ArrowRight className="h-4 w-4 transition-transform" />
+                                </div>
+                            </div>
+                        </Link>
                     </CardContent>
                 </Card>
             </div>

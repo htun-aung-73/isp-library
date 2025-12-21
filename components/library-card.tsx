@@ -4,11 +4,11 @@ import { useRef, useCallback } from "react"
 import { toPng } from "html-to-image"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
-import { SessionUser } from "@/lib/baserow/types"
+import { SessionUser, UserProfile } from "@/lib/baserow/types"
 
 
 interface LibraryCardProps {
-  user: SessionUser
+  user: SessionUser | UserProfile | undefined
   borrowedCount: number
   memberSince: string
 }
@@ -27,7 +27,7 @@ export function LibraryCard({ user, borrowedCount, memberSince }: LibraryCardPro
     })
       .then((dataUrl: string) => {
         const link = document.createElement("a")
-        link.download = `library-card-${user.username}.png`
+        link.download = `library-card-${user?.username}.png`
         link.href = dataUrl
         link.click()
         toast.success("Library card downloaded successfully", {
@@ -47,13 +47,13 @@ export function LibraryCard({ user, borrowedCount, memberSince }: LibraryCardPro
 
   }, [cardRef, user])
 
-  const memberDate = new Date(memberSince).toLocaleDateString("en-US", {
+  const memberDate = new Date(memberSince || new Date()).toLocaleDateString("en-US", {
     month: "long",
     year: "numeric",
   })
 
   // Generate a simple card number from email
-  const cardNumber = user.email
+  const cardNumber = (user?.email || "guest@example.com")
     .split("")
     .reduce((acc, char) => acc + char.charCodeAt(0), 0)
     .toString()
@@ -81,8 +81,8 @@ export function LibraryCard({ user, borrowedCount, memberSince }: LibraryCardPro
                   <User className="h-3 w-3" />
                   Member
                 </div>
-                <p className="text-sm font-semibold truncate">{user.username}</p>
-                <p className="text-sm font-semibold truncate">{user.email}</p>
+                <p className="text-sm">{user?.username}</p>
+                <p className="text-sm">{user?.email}</p>
               </div>
               <div>
                 <div className="flex items-center gap-1.5 text-[10px] uppercase font-bold opacity-70 mb-1">

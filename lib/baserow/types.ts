@@ -90,6 +90,7 @@ export interface BaserowUser {
     is_admin: boolean
     created_at: string
     updated_at?: string
+    borrow_books: LinkData[]
 }
 
 /**
@@ -184,10 +185,11 @@ export interface BorrowedBook {
 
 export interface UserProfile {
     id: string
-    user_id: string | null
-    username: string | null
-    email: string | null
+    user_id: string
+    username: string
+    email: string
     is_admin: boolean
+    borrow_books: string[] | null
     created_at?: string
     updated_at?: string
 }
@@ -238,6 +240,28 @@ export function mapBaserowUserToSessionUser(user: BaserowUser): SessionUser {
         username: user.username ?? null,
         email: user.email,
         isAdmin: user.is_admin,
+        created_at: user.created_at,
+        updated_at: user.updated_at,
+    }
+}
+
+export function flattenLinkData(linkData: LinkData[]): string[] | null {
+    if (Array.isArray(linkData) && linkData.length > 0) {
+        const flattened = linkData
+            .map((item) => item.value)
+            .filter((value): value is string => value !== null)
+        return flattened.length > 0 ? flattened : null
+    }
+    return null
+}
+export function mapBaserowUserToUser(user: BaserowUser): UserProfile {
+    return {
+        id: user.id,
+        user_id: user.user_id,
+        username: user.username,
+        email: user.email,
+        is_admin: user.is_admin,
+        borrow_books: flattenLinkData(user.borrow_books),
         created_at: user.created_at,
         updated_at: user.updated_at,
     }

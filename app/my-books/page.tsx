@@ -6,13 +6,18 @@ import { useAppSelector } from "@/lib/redux/hooks"
 import { selectUser } from "@/lib/redux/slices/authSlice"
 import { useGetBorrowedBooksByUserIdQuery } from "@/lib/redux/services/baserowApi"
 import BooksLoading from "../books/loading"
+import { Badge } from "@/components/ui/badge"
 
 export default function MyBooksPage() {
   const user = useAppSelector(selectUser)
 
-  const { data: borrowedBooks, isLoading, isError } = useGetBorrowedBooksByUserIdQuery(user.user_id, {
+  const { data: books, isLoading, isError } = useGetBorrowedBooksByUserIdQuery(user.user_id, {
     skip: !user.user_id,
   })
+
+  const borrowed = books?.filter((book) => book.status === "borrowed")
+  const overDue = borrowed?.filter((book) => book.due_date < new Date().toISOString())
+  const returned = books?.filter((book) => book.status === "returned")
 
   if (isLoading) {
     return <BooksLoading />
@@ -36,18 +41,33 @@ export default function MyBooksPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">My Books</h1>
-        <p className="text-muted-foreground">Manage your borrowed books and view your library card</p>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+          <h1 className="text-3xl font-bold mb-2">My Books</h1>
+          <div className="flex-1 text-center md:text-left space-y-2 self-center">
+            <div className="flex flex-col md:flex-row md:items-center gap-3">
+              <Badge variant="default" className="bg-amber-700 w-fit mx-auto md:mx-0 font-bold px-3 py-1">
+                {`${borrowed?.length || 0} Borrowed`}
+              </Badge>
+              <Badge variant="destructive" className="w-fit mx-auto md:mx-0 font-bold px-3 py-1">
+                {`${overDue?.length || 0} Overdue`}
+              </Badge>
+              <Badge variant="secondary" className="w-fit mx-auto md:mx-0 font-bold px-3 py-1">
+                {`${returned?.length || 0} Returned`}
+              </Badge>
+            </div>
+          </div>
+        </div>
+        <p className="text-muted-foreground">Manage your borrowed books and download your library card.</p>
       </div>
 
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          <MyBooksContent borrowedBooks={borrowedBooks || []} />
+          <MyBooksContent borrowed={borrowed || []} overDue={overDue || []} returned={returned || []} />
         </div>
         <div className="lg:col-span-1">
           <LibraryCard
             user={user}
-            borrowedCount={borrowedBooks?.filter((b) => b.status === "borrowed").length || 0}
+            borrowedCount={borrowed?.length || 0}
             memberSince={user.created_at}
           />
         </div>
