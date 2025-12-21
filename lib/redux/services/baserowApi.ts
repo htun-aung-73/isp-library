@@ -8,6 +8,7 @@ import {
     mapBaserowAuthorToAuthor,
     ApiResponse,
     ApiReturnResponse,
+    UserProfile,
 } from "../../baserow/types"
 import { setCredentials, logout } from "../slices/authSlice"
 
@@ -197,6 +198,31 @@ export const baserowApi = createApi({
                 } catch (err) { }
             },
         }),
+
+        // Users
+        getAllUsers: builder.query<UserProfile[], void>({
+            query: () => "api/users",
+            transformResponse: (response: ApiReturnResponse<UserProfile[]>) => response.data.filter((user) => !user.is_admin),
+            providesTags: (result) =>
+                result
+                    ? [
+                        ...result.map(({ id }) => ({ type: "User" as const, id })),
+                        { type: "User", id: "LIST" },
+                    ]
+                    : [{ type: "User", id: "LIST" }],
+        }),
+
+        getUserById: builder.query<UserProfile, string>({
+            query: (id) => `api/users/${id}`,
+            transformResponse: (response: ApiReturnResponse<UserProfile>) => response.data,
+            providesTags: (result) =>
+                result
+                    ? [
+                        { type: "User" as const, id: result.id },
+                        { type: "User", id: "LIST" },
+                    ]
+                    : [{ type: "User", id: "LIST" }],
+        }),
     }),
 })
 
@@ -215,5 +241,6 @@ export const {
     useSignUpMutation,
     useGetAuthorByIdQuery,
     useGetBooksByAuthorIdQuery,
+    useGetAllUsersQuery,
 } = baserowApi
 

@@ -5,7 +5,7 @@ export default function BooksLoading() {
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <Skeleton className="h-10 w-48 mb-2" />
-        <Skeleton className="h-5 w-96" />
+        <Skeleton className="h-5 w-90" />
       </div>
 
       <div className="mt-8">

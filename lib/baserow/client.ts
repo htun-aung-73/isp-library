@@ -12,6 +12,8 @@ import {
     BorrowedBook,
     SessionUser,
     mapBaserowUserToSessionUser,
+    mapBaserowUserToUser,
+    UserProfile,
 } from "./types"
 
 import * as bcrypt from "bcryptjs";
@@ -148,6 +150,20 @@ export async function getUserByEmail(email: string): Promise<BaserowUser | null>
         return response.results[0] || null
     } catch {
         return null
+    }
+}
+
+/**
+ * Get all users
+ */
+export async function getAllUsers(): Promise<UserProfile[]> {
+    try {
+        const response = await baserowFetch<BaserowListResponse<BaserowUser>>(
+            `${BASEROW_API_URL}/api/database/rows/table/${TABLE_USERS}/?user_field_names=true`
+        )
+        return response.results.map(mapBaserowUserToUser)
+    } catch {
+        return []
     }
 }
 
@@ -289,6 +305,7 @@ export async function createUser(data: {
                     password: hashedPassword,
                     username: data.username,
                     is_admin: false,
+                    created_at: new Date().toISOString(),
                 }),
             }
         )

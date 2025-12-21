@@ -1,14 +1,13 @@
 "use client"
 
-import { useMemo } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { BookOpen, Eye, Calendar, Globe, Hash, Library, User, Book, MapPinCheckInside } from "lucide-react"
+import { BookOpen, Eye, Calendar, Globe, Library, User, Book, MapPinCheckInside } from "lucide-react"
 import Link from "next/link"
 import { useGetBooksByAuthorIdQuery, useGetAuthorByIdQuery } from "@/lib/redux/services/baserowApi"
 import { Skeleton } from "./ui/skeleton"
 import { Badge } from "./ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
+import { Avatar, AvatarFallback } from "./ui/avatar"
 
 
 interface AuthorBooksProps {
@@ -57,7 +56,7 @@ export function AuthorBooks({ authorId }: AuthorBooksProps) {
             </div>
         )
     }
-    console.log("Author", author)
+
     return (
         <div className="space-y-12">
             {/* Author Profile Header */}
@@ -100,7 +99,7 @@ export function AuthorBooks({ authorId }: AuthorBooksProps) {
                                     </CardTitle>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-3 pt-1">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
                                     <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
                                         <Globe className="h-3.5 w-3.5 opacity-60" />
                                         <span className="truncate">{book.language || "Unknown"}</span>

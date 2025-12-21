@@ -219,9 +219,9 @@ export function BookDetails({
                 </p>
                 <div className="w-48 h-2 bg-secondary rounded-full mt-2">
                   <div
-                    className={`h-2 rounded-full transition-all ${hasReachedBorrowLimit ? "bg-destructive" : "bg-primary"}`}
+                    className={`h-2 rounded-full transition-all overflow-clip ${hasReachedBorrowLimit ? "bg-destructive" : "bg-primary"}`}
                     style={{
-                      width: `${(currentBorrowedByUser / maxBorrowsPerPeriod) * 100}%`,
+                      width: `${(currentBorrowedByUser >= 2 ? 2 : currentBorrowedByUser) / maxBorrowsPerPeriod * 100}%`,
                     }}
                   />
                 </div>
@@ -237,25 +237,25 @@ export function BookDetails({
           <Card className="border-border">
             <CardContent className="p-4">
               <h2 className="font-semibold mb-3 text-foreground">Borrow the book</h2>
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row md:items-center justify-between">
                 <div>
                   {
-                    (hasBorrowed && borrowedBook?.user_id === user?.user_id) && <p className="text-sm text-muted-foreground">
+                    (hasBorrowed && borrowedBook?.user_id === user?.user_id) && <p className="text-sm text-muted-foreground mb-3">
                       This book is currently borrowed by you.
                     </p>
                   }
 
                   {
-                    (isBookBorrowed && checkBookBorrowed?.user_id !== user?.user_id) && <p className="text-sm text-muted-foreground">
+                    (isBookBorrowed && checkBookBorrowed?.user_id !== user?.user_id) && <p className="text-sm text-muted-foreground mb-3">
                       This book is currently borrowed by other user.
                     </p>
                   }
 
-                  {(!hasReachedBorrowLimit && !hasBorrowed && !isBookBorrowed) && <p className="text-sm text-muted-foreground">
+                  {(!hasReachedBorrowLimit && !hasBorrowed && !isBookBorrowed) && <p className="text-sm text-muted-foreground mb-3">
                     This book is currently available for borrowing.
                   </p>}
 
-                  {hasReachedBorrowLimit && <p className="text-sm text-destructive">
+                  {hasReachedBorrowLimit && <p className="text-sm text-destructive mb-3">
                     You have reached your borrowing limit. Please return a book.
                   </p>}
                 </div>
