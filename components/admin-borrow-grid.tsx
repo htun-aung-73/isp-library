@@ -64,23 +64,31 @@ export function AdminBorrowGrid({ borrowedBooks }: AdminBorrowGridProps) {
         filter: "agTextColumnFilter",
         flex: 1,
         minWidth: 120,
+        valueGetter: (params: any) => {
+          const status = params.data?.status
+          if (status === "borrowed") {
+            const dueDate = params.data?.due_date ? new Date(params.data.due_date) : null
+            if (dueDate && dueDate < new Date()) {
+              return "overdue"
+            }
+            return "borrowed"
+          }
+          return status || "N/A"
+        },
         cellRenderer: (params: any) => {
           const status = params.value
+          if (status === "overdue") {
+            return (
+              <div className="flex items-center h-full">
+                <Badge variant="destructive" className="gap-1 px-2 py-0.5 font-semibold animate-pulse">
+                  <AlertCircle className="h-3 w-3" />
+                  Overdue
+                </Badge>
+              </div>
+            )
+          }
+
           if (status === "borrowed") {
-            const dueDate = new Date(params.data?.due_date)
-            const isOverdue = dueDate < new Date()
-
-            if (isOverdue) {
-              return (
-                <div className="flex items-center h-full">
-                  <Badge variant="destructive" className="gap-1 px-2 py-0.5 font-semibold animate-pulse">
-                    <AlertCircle className="h-3 w-3" />
-                    Overdue
-                  </Badge>
-                </div>
-              )
-            }
-
             return (
               <div className="flex items-center h-full">
                 <Badge variant="secondary" className="gap-1 px-2 py-0.5 font-semibold bg-amber-100 text-amber-700 border-amber-200 hover:bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-800">
