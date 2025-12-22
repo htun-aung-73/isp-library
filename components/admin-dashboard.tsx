@@ -54,7 +54,7 @@ export function AdminDashboard() {
     return (
         <div className="space-y-8">
             <div>
-                <h1 className="text-3xl font-bold text-primary mb-2">Admin Dashboard</h1>
+                <h1 className="text-3xl font-bold text-pink-700 mb-2">Admin Dashboard</h1>
                 <p className="text-muted-foreground">Track and manage all book borrowing activities</p>
             </div>
 

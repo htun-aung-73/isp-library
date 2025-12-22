@@ -20,7 +20,7 @@ const robotoMono = Roboto_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Library Hub",
+  title: "ISP Library",
   description: "Search books, borrow titles, and track your reading with our modern library management system.",
 }
 
@@ -35,6 +35,20 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
+        <link
+          rel="icon"
+          href="https://ispmyanmar.com/wp-content/uploads/2024/03/cropped-favicon-2024-32x32.png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          href="https://ispmyanmar.com/wp-content/uploads/2024/03/cropped-favicon-2024-192x192.png"
+          sizes="192x192"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="https://ispmyanmar.com/wp-content/uploads/2024/03/cropped-favicon-2024-180x180.png"
+        />
       </head>
       <body className="font-manrope antialiased bg-background text-foreground">
         {/* user={session} is to use session data in provider for next login; so the user dont have to login again after refresh*/}
