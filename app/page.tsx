@@ -38,9 +38,7 @@ export default async function HomePage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl text-balance">
-              Your
-              <span className="text-primary/80"> Library </span>
-              from ISP Community
+              Smart and Elegant <span className={"text-secondary"}>Library Management System</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty">
               Discover, borrow, and track books effortlessly. Our digital library management system brings the joy of

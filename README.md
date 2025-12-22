@@ -1,4 +1,4 @@
-# 📚 ISP Library Management System
+# 📚 Library Management System
 
 A modern, full-stack Library Management System designed for the ISP Community. This application provides a seamless experience for discovering, borrowing, and tracking books, powered by a robust backend and a cutting-edge frontend.
 
@@ -38,19 +38,6 @@ The system communicates with clinical precision through its Baserow integration 
 - pnpm / npm / yarn
 - A Baserow account and API token
 
-### Environment Variables
-
-Create a `.env.local` file in the root directory and add the following:
-
-```env
-NEXT_PUBLIC_BASEROW_API_URL=https://api.baserow.io
-NEXT_PUBLIC_BASEROW_API_TOKEN=your_token_here
-NEXT_PUBLIC_BASEROW_TABLE_BOOKS=your_table_id
-NEXT_PUBLIC_BASEROW_TABLE_AUTHORS=your_table_id
-NEXT_PUBLIC_BASEROW_TABLE_USERS=your_table_id
-NEXT_PUBLIC_BASEROW_TABLE_BORROW_BOOKS=your_table_id
-```
-
 ### Installation
 
 1. Clone the repository:
@@ -70,7 +57,3 @@ NEXT_PUBLIC_BASEROW_TABLE_BORROW_BOOKS=your_table_id
    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## 📄 License
-
-This project is private and intended for the ISP Community.
