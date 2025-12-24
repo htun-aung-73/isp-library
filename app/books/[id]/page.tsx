@@ -11,14 +11,17 @@ export default function BookPage() {
   const user = useAppSelector(selectUser)
 
   const { data: book, isLoading: isBookLoading, isError: isBookError } = useGetBookByIdQuery(id, {
-    skip: !id
+    skip: !id,
   })
   const { data: checkBookBorrowed, isLoading: isBookBorrowedLoading, isError: isBookBorrowedError } = useCheckBookBorrowedQuery(book?.book_id || "", {
-    skip: !book?.book_id
+    skip: !book?.book_id,
+    pollingInterval: 3000,
+    skipPollingIfUnfocused: true,
+    refetchOnFocus: true
   })
 
   const { data: borrowedBooks, isLoading: isBorrowedBooksLoading, isError: isBorrowedBooksError } = useGetBorrowedBooksByUserIdQuery(user?.user_id || "", {
-    skip: !user?.user_id
+    skip: !user?.user_id,
   })
 
   const hasBorrowed = borrowedBooks?.some(b => (b.book_id === book?.book_id) && (b.status === "borrowed"))
