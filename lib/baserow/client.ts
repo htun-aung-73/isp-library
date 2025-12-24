@@ -48,8 +48,8 @@ async function baserowFetch<T>(
     })
 
     if (!response.ok) {
-        console.log("url", url, "options", options)
         const error = await response.text()
+        console.log("Error in Baserow API: ", error)
         throw new Error(`Baserow API error: ${response.status} - ${error}`)
     }
 
