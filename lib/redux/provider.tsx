@@ -24,7 +24,6 @@ export default function ReduxProvider({
 
     useEffect(() => {
         if (storeRef.current) {
-            console.log("Setting up RTK Query listeners")
             return setupListeners(storeRef.current.dispatch)
         }
     }, [])
