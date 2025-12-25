@@ -47,18 +47,44 @@ export async function proxy(request: NextRequest) {
         }
     }
 
-    return NextResponse.next()
+    // Protect API routes
+    if (request.nextUrl.pathname.startsWith("/api")) {
+        const publicApiPaths = ["/api/auth/login", "/api/auth/signup", "/api/auth/logout"]
+        const adminApiPaths = ["/api/users"]
+        const isPublicApi = publicApiPaths.some((path) => request.nextUrl.pathname.startsWith(path))
+        const isAdminApi = adminApiPaths.some((path) => request.nextUrl.pathname.startsWith(path))
+
+        if (isPublicApi) {
+            return NextResponse.next()
+        }
+
+        if (!sessionCookie?.value) {
+            return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 })
+        }
+
+        if (isAdminApi) {
+            try {
+                const session = JSON.parse(sessionCookie.value)
+                if (!session.isAdmin) {
+                    return NextResponse.json({ success: false, error: "Forbidden" }, { status: 403 })
+                }
+            } catch {
+                return NextResponse.json({ success: false, error: "Unauthorized" }, { status: 401 })
+            }
+        }
+
+        return NextResponse.next()
+    }
 }
 
 export const config = {
     matcher: [
         /*
          * Match all request paths except for the ones starting with:
-         * - api (API routes)
          * - _next/static (static files)
          * - _next/image (image optimization files)
          * - favicon.ico (favicon file)
          */
-        "/((?!api|_next/static|_next/image|favicon.ico).*)",
+        "/((?!_next/static|_next/image|favicon.ico).*)",
     ],
 }
