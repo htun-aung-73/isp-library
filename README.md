@@ -20,6 +20,21 @@ A modern, full-stack Library Management System designed for the ISP Community. T
 - **Visualization**: [Recharts](https://recharts.org/)
 - **Security**: [Bcryptjs](https://github.com/dcodeIO/bcrypt.js) for password hashing
 
+## Sample Views
+
+![Landing Page](/public/1.png)
+![Login Page](/public/2.png)
+![Books Page](/public/3.png)
+![Analytics Page](/public/4.png)
+![Book Detail Page](/public/6.png)
+![Book Detail Page](/public/7.png)
+![Mybooks Page](/public/5.png)
+![Book Detail Page](/public/7.png)
+![Author Page](/public/8.png)
+![Author Detail Page](/public/9.png)
+![Admin Detail Page](/public/10.png)
+![Admin Detail Page](/public/11.png)
+
 ## 🚀 Key Functions & API Integration
 
 The system communicates with clinical precision through its Baserow integration layer:
